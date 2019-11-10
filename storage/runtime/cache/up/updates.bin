@@ -1,0 +1,41 @@
+a:2:{i:0;a:2:{s:3:"cms";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:2:{i:0;a:4:{s:7:"version";s:6:"3.3.15";s:8:"critical";b:0;s:4:"date";s:25:"2019-11-05T00:00:00+00:00";s:5:"notes";s:1501:"<h3>Fixed</h3>
+<ul><li>Fixed a bug where it wasn’t possible to apply project config changes that removed a Matrix block type which contained a nested Super Table field, if <code>allowAdminChanges</code> was set to <code>false</code>. (<a href="https://github.com/craftcms/cms/issues/5078">#5078</a>)</li>
+<li>Fixed a bug where the nag alert that was shown when the wrong Craft edition was installed was including a “Resolve” link even if the user didn’t have access to the Plugin Store. (<a href="https://github.com/craftcms/cms/issues/5190">#5190</a>)</li>
+<li>Fixed a PHP error that could occur when saving an element, if it had a Dropdown field that had been programmatically saved with integer option values. (<a href="https://github.com/craftcms/cms/issues/5172">#5172</a>)</li>
+<li>Fixed a bug where “Updating search indexes” jobs could fail. (<a href="https://github.com/craftcms/cms/issues/5191">#5191</a>)</li>
+<li>Fixed an error that could occur if an invalid PHP interval string was passed to <code>craft\helpers\DateTimeHelper::isValidIntervalString()</code>. (<a href="https://github.com/craftcms/cms/issues/5193">#5193</a>)</li>
+<li>Fixed a bug where it wasn’t possible to access categories’ and tags’ <code>groupId</code> property via GraphQL. (<a href="https://github.com/craftcms/cms/issues/5199">#5199</a>)</li>
+</ul><h3>Security</h3>
+<ul><li>Fixed a bug where rows in the <code>sessions</code> table weren’t getting deleted when a user was logged out.</li>
+</ul>";}i:1;a:4:{s:7:"version";s:6:"3.3.14";s:8:"critical";b:0;s:4:"date";s:25:"2019-10-30T00:00:00+00:00";s:5:"notes";s:3067:"<h3>Added</h3>
+<ul><li>GraphQL entry queries now support an <code>authorGroupId</code> argument.</li>
+<li>Added <code>craft\gql\types\QueryArgument</code>.</li>
+</ul><h3>Changed</h3>
+<ul><li>It’s now possible to provide multiple values for the <code>height</code>, <code>width</code>, and <code>size</code> arguments when querying or filtering assets via GraphQL.</li>
+<li>It’s now possible to provide multiple values for the <code>expiryDate</code> and <code>postDate</code> arguments when querying for elements via GraphQL.</li>
+<li>It’s now possible to use the <code>not</code> keyword in the <code>id</code> argument when querying for elements via GraphQL.</li>
+<li>It’s now possible to use the <code>not</code> keyword in the <code>folderId</code> and <code>volumeId</code> arguments when querying or filtering assets via GraphQL.</li>
+<li>It’s now possible to use the <code>not</code> keyword in the <code>groupId</code> argument when querying or filtering tags or categories via GraphQL.</li>
+<li>It’s now possible to use the <code>not</code> keyword in the <code>sectionId</code>, <code>typeId</code>, and <code>authorId</code> arguments when querying or filtering entries via GraphQL.</li>
+<li>It’s now possible to use the <code>not</code> keyword in the <code>fieldId</code>, <code>ownerId</code>, and <code>typeId</code> when filtering Matrix blocks via GraphQL.</li>
+<li>Craft no longer bundles Bootstrap, as the Debug Extension now provides its own copy.</li>
+<li>Updated the bundled locale data based on ICU 64.1.</li>
+<li>Formatted dates now include two-digit months and days if that’s what’s called for by the ICU date formats. (<a href="https://github.com/craftcms/cms/issues/5186">#5186</a>)</li>
+</ul><h3>Fixed</h3>
+<ul><li>Fixed a bug where Edit Entry pages would often warn authors when leaving the page even if nothing had changed, if there was a Redactor field or other field that was doing its own value normalization on page load. (<a href="https://github.com/craftcms/redactor/issues/161">craftcms/redactor#161</a>)</li>
+<li>Fixed a bug where assets could remain in their temporary upload location after an entry was first published. (<a href="https://github.com/craftcms/cms/issues/5139">#5139</a></li>
+<li>Fixed a bug where the <code>update</code> command could run out of memory. (<a href="https://github.com/craftcms/cms/issues/1852">#1852</a>)</li>
+<li>Fixed a bug where saving a new GraphQL schema would not populate the UID property.</li>
+<li>Fixed a bug where Craft wasn’t clearing search keywords for custom fields that weren’t searchable anymore. (<a href="https://github.com/craftcms/cms/issues/5168">#5168</a>)</li>
+<li>Fixed a bug where <code>relatedTo</code> element query params weren’t returning elements that were related to the source element when previewing a draft or revision.</li>
+<li>Fixed a bug where importing project config changes would break if they contained a changed global set and orphaned Matrix block types. (<a href="https://github.com/craftcms/cms/issues/4789">#4789</a></li>
+</ul>";}}s:11:"packageName";s:12:"craftcms/cms";}s:7:"plugins";a:11:{s:6:"cp-nav";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:12:"verbb/cp-nav";}s:8:"commerce";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:1:{i:0;a:4:{s:7:"version";s:5:"2.2.7";s:8:"critical";b:0;s:4:"date";s:25:"2019-10-30T00:00:00+00:00";s:5:"notes";s:875:"<h3>Changed</h3>
+<ul><li><code>commerce/cart/*</code> requests now include estimated address data in their JSON responses. (<a href="https://github.com/craftcms/commerce/issues/1084">#1084</a>)</li>
+</ul><h3>Fixed</h3>
+<ul><li>Fixed an error that could occur when deploying <code>project.yaml</code> changes to a new environment. (<a href="https://github.com/craftcms/commerce/issues/1085">#1085</a>)</li>
+<li>Fixed a missing import. (<a href="https://github.com/craftcms/commerce/issues/1087">#1087</a>)</li>
+<li>Fixed a SQL error that occurred when eager-loading variants. (<a href="https://github.com/craftcms/commerce/pull/1093">#1093</a>)</li>
+<li>Fixed an error that occurred on the Orders index page if the "Shipping Business Name" column was shown.</li>
+</ul><h3>Deprecated</h3>
+<ul><li>Deprecated <code>craft\commerce\models\Address::getFullName()</code>.</li>
+</ul>";}}s:11:"packageName";s:17:"craftcms/commerce";}s:11:"element-api";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:20:"craftcms/element-api";}s:16:"expanded-singles";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:22:"verbb/expanded-singles";}s:6:"imager";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:13:"aelvan/imager";}s:10:"olivemenus";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:28:"olivestudio/craft-olivemenus";}s:16:"commerce-payflow";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:22:"verbb/commerce-payflow";}s:8:"redactor";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:17:"craftcms/redactor";}s:18:"shipstationconnect";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:33:"fostercommerce/shipstationconnect";}s:15:"commerce-stripe";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:24:"craftcms/commerce-stripe";}s:9:"wordsmith";a:3:{s:6:"status";s:8:"eligible";s:8:"releases";a:0:{}s:11:"packageName";s:23:"topshelfcraft/wordsmith";}}}i:1;N;}

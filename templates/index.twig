@@ -1,0 +1,71 @@
+{% extends "_layouts/base" %}
+{% block body_class %}view-home{% endblock %}
+
+{% block sitemeta %}
+<title>{{ "MavenShake - No-nonsense Nutrition"|t }}</title>
+<meta name="description" content="{{ "The example templates for Craft Commerce"|t }}">
+{% endblock %}
+
+{% block body %}
+<div id="main" class="container mx-auto p-6">
+  <div class="message-main">
+    <h1 class="headline">{{ entry.headline }}</h1>
+    <p class="subhead">
+      {{ entry.subhead }}
+    </p>
+
+    <a href="{{ entry.ctaUrl }}" class="button button--primary">{{ entry.cta }}</a>
+
+    <p>
+      {{ entry.richtext }}
+    </p>
+  </div>
+
+  <div class="product-info">
+    {% for asset in entry.keyart %}
+      <img src="{{ asset.getUrl('keyart') }}" alt="{{ asset.title }}">                               
+    {% endfor %}
+    {# <img src="images/homepage-product.png" alt=""> #}
+  </div>
+</div>
+
+<div class="section section--badges">
+  <h4 class="hashtag">#MAVENSHAKE</h4>
+
+  <div class="badges">
+    <img class="badges__item" src="/images/icons/badge-vegan.svg" alt="">
+    <img class="badges__item" src="/images/icons/badge-gluten.svg" alt="">
+    <img class="badges__item" src="/images/icons/badge-dairy.svg" alt="">
+    <img class="badges__item" src="/images/icons/badge-sugar.svg" alt="">
+  </div>
+</div>
+
+{% for block in entry.highlights.all() %}
+  {% if block.type == "contentSection" %}
+    <div class="section section--{{ block.layout }}" style="background-color: {{ block.bgColor }}">
+      <div class="container">
+        <div class="section__message">
+          <h2 class="section__title">{{ block.headline }}</h2>
+          <p class="section__description">{{ block.subhead }}</p>
+          <p class="section__link">{{ block.sectionLink }}</p>
+        </div>
+        {% for asset in block.sectionImage %}
+          <img class="section__image" src="{{ asset.getUrl('w600') }}" alt="{{ asset.title }}">                               
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block vue %}
+{# {% js %}
+  new Vue({
+    el: '#main',
+    delimiters: ['${', '}'],
+    data: {
+      test: "sdfsdfsd"
+    }
+  })
+{% endjs %} #}
+{% endblock %}

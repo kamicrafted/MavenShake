@@ -1,0 +1,108 @@
+/* ==============================================
+GLOBAL
+============================================== */
+body {
+  background-color: $color-bg;
+  background-image: radial-gradient(
+    circle at top center,
+    rgba(white, 0.5),
+    $color-bg
+  );
+  font-family: $font-body;
+  font-size: $base-font-size;
+}
+
+#main {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a {
+  color: $color-link;
+}
+
+.not-link {
+  opacity: 0.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-headline;
+}
+
+.antialias {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ==============================================
+CONTAINER
+============================================== */
+.container {
+  max-width: $site-max-width;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+@media (max-width: $mq-lg) {
+  body > .container {
+    padding: 50px 25px;
+  }
+}
+
+@media (min-width: $mq-lg) {
+  body > .container {
+    padding: 50px 50px;
+  }
+}
+
+/* ============================================== */
+
+
+/* ==============================================
+PAGE MAIN MESSAGE
+============================================== */
+.message-main {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+
+  .headline {
+    margin: 0 0 20px;
+    font-size: 64px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .subhead {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .button {
+    margin: 20px 0;
+  }
+}
+
+
+/* ==============================================
+RESPONSIVE - TABLET
+============================================== */
+@media (min-width: $mq-md) and (max-width: $mq-lg) {
+  
+}
+
+
+/* ==============================================
+RESPONSIVE - MOBILE
+============================================== */
+@media (max-width: $mq-md) {
+  
+}

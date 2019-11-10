@@ -1,0 +1,2209 @@
+2019-11-05 06:47:55 [-][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-05 06:47:55 [-][-][-][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-05 06:47:55 [-][-][-][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-05 06:47:55 [-][-][-][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-05 06:47:55 [-][-][-][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-05 06:47:55 [-][-][-][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-05 06:47:55 [-][-][-][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-05 06:47:55 [-][-][-][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-05 06:47:55 [-][-][-][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-05 06:47:55 [-][-][-][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-05 06:47:55 [-][-][-][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-05 06:47:55 [-][-][-][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-05 06:47:55 [-][-][-][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-05 06:47:55 [-][-][-][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-05 06:47:55 [-][-][-][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-05 06:47:55 [-][-][-][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-05 06:47:55 [-][-][-][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: favicon.ico',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-05 06:47:55 [-][-][-][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: favicon.ico',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-05 06:47:55 [-][-][-][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-05 06:47:55 [-][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: favicon.ico in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('favicon.ico', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-05 06:47:55 [-][-][-][info][application] $_GET = [
+    'p' => '/favicon.ico'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://dev.mavenshake.com/'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '32949'
+    'REMOTE_ADDR' => '172.58.239.39'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/favicon.ico'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/favicon.ico'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1572965275.8857
+    'REQUEST_TIME' => 1572965275
+    'ENVIRONMENT' => 'dev'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake-dev'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'DEFAULT_SITE_URL' => 'dev.mavenshake.com'
+]
+2019-11-07 14:58:51 [-][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-07 14:58:51 [-][-][-][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-07 14:58:51 [-][-][-][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-07 14:58:51 [-][-][-][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-07 14:58:51 [-][-][-][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-07 14:58:51 [-][-][-][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-07 14:58:51 [-][-][-][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-07 14:58:51 [-][-][-][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-07 14:58:51 [-][-][-][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-07 14:58:51 [-][-][-][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-07 14:58:51 [-][-][-][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-07 14:58:51 [-][-][-][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-07 14:58:51 [-][-][-][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-07 14:58:51 [-][-][-][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-07 14:58:51 [-][-][-][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-07 14:58:51 [-][-][-][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-07 14:58:51 [-][-][-][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: favicon.ico',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-07 14:58:51 [-][-][-][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: favicon.ico',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-07 14:58:51 [-][-][-][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-07 14:58:51 [-][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: favicon.ico in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('favicon.ico', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-07 14:58:51 [-][-][-][info][application] $_GET = [
+    'p' => '/favicon.ico'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://dev.mavenshake.com/'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-us'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.1 Mobile/15E148 Safari/604.1'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '64074'
+    'REMOTE_ADDR' => '68.195.203.142'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/favicon.ico'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/favicon.ico'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573167531.7683
+    'REQUEST_TIME' => 1573167531
+    'ENVIRONMENT' => 'dev'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake-dev'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'DEFAULT_SITE_URL' => 'dev.mavenshake.com'
+]
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\web\Session::open] Session started
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='robots.txt') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='robots.txt') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='robots.txt') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: robots.txt',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: robots.txt',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: robots.txt in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('robots.txt', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:50 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][application] $_GET = [
+    'p' => '/robots.txt'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CraftSessionId' => 'h9ghf3cetpnfd6ue9bdvh9f5v1'
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CraftSessionId=h9ghf3cetpnfd6ue9bdvh9f5v1; CRAFT_CSRF_TOKEN=2df78978b4c534c3f898c76dde383b71906c2defb9050f0793b8adda9b39eacda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A40%3A%228rV2SFHS29XRJfqK5SReEdGPNPGKMbWCh-5dDF3U%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '53092'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/robots.txt'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/robots.txt'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573337930.5109
+    'REQUEST_TIME' => 1573337930
+    'ENVIRONMENT' => 'dev'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake-dev'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'DEFAULT_SITE_URL' => 'dev.mavenshake.com'
+]
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\web\Session::open] Session started
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: favicon.ico',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: favicon.ico',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: favicon.ico in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('favicon.ico', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:18:51 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][application] $_GET = [
+    'p' => '/favicon.ico'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CraftSessionId' => 'h9ghf3cetpnfd6ue9bdvh9f5v1'
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CraftSessionId=h9ghf3cetpnfd6ue9bdvh9f5v1; CRAFT_CSRF_TOKEN=2df78978b4c534c3f898c76dde383b71906c2defb9050f0793b8adda9b39eacda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A40%3A%228rV2SFHS29XRJfqK5SReEdGPNPGKMbWCh-5dDF3U%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://dev.mavenshake.com/'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '53092'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/favicon.ico'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/favicon.ico'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573337931.2568
+    'REQUEST_TIME' => 1573337931
+    'ENVIRONMENT' => 'dev'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake-dev'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'DEFAULT_SITE_URL' => 'dev.mavenshake.com'
+]
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\web\Session::open] Session started
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: system',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: system',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: system in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('system', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:19:36 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][application] $_GET = [
+    'p' => '/system'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CraftSessionId' => 'h9ghf3cetpnfd6ue9bdvh9f5v1'
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CraftSessionId=h9ghf3cetpnfd6ue9bdvh9f5v1; CRAFT_CSRF_TOKEN=2df78978b4c534c3f898c76dde383b71906c2defb9050f0793b8adda9b39eacda%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A40%3A%228rV2SFHS29XRJfqK5SReEdGPNPGKMbWCh-5dDF3U%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '53092'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/system'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/system'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573337976.7713
+    'REQUEST_TIME' => 1573337976
+    'ENVIRONMENT' => 'dev'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake-dev'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'DEFAULT_SITE_URL' => 'dev.mavenshake.com'
+]
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][olivestudio\olivemenus\Olivemenus::init] Olivemenus plugin loaded
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\web\Session::open] Session started
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: system',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: system',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: system in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('system', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:23 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][application] $_GET = [
+    'p' => '/system'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CraftSessionId' => 'h9ghf3cetpnfd6ue9bdvh9f5v1'
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    '1031b8c41dfff97a311a7ac99863bdc5__returnUrl' => '/admin'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CraftSessionId=h9ghf3cetpnfd6ue9bdvh9f5v1; CRAFT_CSRF_TOKEN=e775351c18b2dcecaa79ee8916b7ef8e6ecf4da398f1c6c74ee45a427b2eee28a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A40%3A%22vS6VvGzBaL9a39A0Gj5EfjcF1jGB1GKqGCkTxmtK%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '55301'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/system'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/system'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573339883.6982
+    'REQUEST_TIME' => 1573339883
+    'ENVIRONMENT' => 'dev'
+    'SYSTEM_NAME' => 'Mavenshake'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'ASSET_BASE_URL' => 'https://testing.kamicrafted.com/images'
+    'ASSET_BASE_FOLDER' => 'images'
+    'SYSTEM_EMAIL' => 'hello@kamicrafted.com'
+    'SENDER_NAME' => 'MavenShake'
+    'GMAIL_USER' => 'hello@kamicrafted.com'
+    'GMAIL_PASSWORD' => '••••••••••••'
+    'STRIPE_KEY_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_KEY_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'DEFAULT_SITE_URL' => 'https://testing.kamicrafted.com'
+]
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][olivestudio\olivemenus\Olivemenus::init] Olivemenus plugin loaded
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\web\Session::open] Session started
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: system',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: system',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: system in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('system', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:44 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][application] $_GET = [
+    'p' => '/system'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CraftSessionId' => 'h9ghf3cetpnfd6ue9bdvh9f5v1'
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    '1031b8c41dfff97a311a7ac99863bdc5__returnUrl' => '/admin'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CraftSessionId=h9ghf3cetpnfd6ue9bdvh9f5v1; CRAFT_CSRF_TOKEN=e775351c18b2dcecaa79ee8916b7ef8e6ecf4da398f1c6c74ee45a427b2eee28a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A40%3A%22vS6VvGzBaL9a39A0Gj5EfjcF1jGB1GKqGCkTxmtK%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '55301'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/system'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/system'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573339904.019
+    'REQUEST_TIME' => 1573339904
+    'ENVIRONMENT' => 'dev'
+    'SYSTEM_NAME' => 'Mavenshake'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'ASSET_BASE_URL' => 'https://testing.kamicrafted.com/images'
+    'ASSET_BASE_FOLDER' => 'images'
+    'SYSTEM_EMAIL' => 'hello@kamicrafted.com'
+    'SENDER_NAME' => 'MavenShake'
+    'GMAIL_USER' => 'hello@kamicrafted.com'
+    'GMAIL_PASSWORD' => '••••••••••••'
+    'STRIPE_KEY_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_KEY_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'DEFAULT_SITE_URL' => 'https://testing.kamicrafted.com'
+]
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][olivestudio\olivemenus\Olivemenus::init] Olivemenus plugin loaded
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\web\Session::open] Session started
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='system') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: system',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: system',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: system in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('system', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 14:51:48 [-][-][h9ghf3cetpnfd6ue9bdvh9f5v1][info][application] $_GET = [
+    'p' => '/system'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CraftSessionId' => 'h9ghf3cetpnfd6ue9bdvh9f5v1'
+    'CRAFT_CSRF_TOKEN' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    '1031b8c41dfff97a311a7ac99863bdc5__returnUrl' => '/admin'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CraftSessionId=h9ghf3cetpnfd6ue9bdvh9f5v1; CRAFT_CSRF_TOKEN=e775351c18b2dcecaa79ee8916b7ef8e6ecf4da398f1c6c74ee45a427b2eee28a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A40%3A%22vS6VvGzBaL9a39A0Gj5EfjcF1jGB1GKqGCkTxmtK%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '55301'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/system'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/system'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573339908.4698
+    'REQUEST_TIME' => 1573339908
+    'ENVIRONMENT' => 'dev'
+    'SYSTEM_NAME' => 'Mavenshake'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'ASSET_BASE_URL' => 'https://testing.kamicrafted.com/images'
+    'ASSET_BASE_FOLDER' => 'images'
+    'SYSTEM_EMAIL' => 'hello@kamicrafted.com'
+    'SENDER_NAME' => 'MavenShake'
+    'GMAIL_USER' => 'hello@kamicrafted.com'
+    'GMAIL_PASSWORD' => '••••••••••••'
+    'STRIPE_KEY_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_KEY_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'DEFAULT_SITE_URL' => 'https://testing.kamicrafted.com'
+]
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake;port=3306;
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][olivestudio\olivemenus\Olivemenus::init] Olivemenus plugin loaded
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\web\Session::open] Session started
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\Module::getModule] Loading module: debug
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SELECT `id`
+FROM `sessions`
+WHERE (`token`='YMZ02UwaUPADX1_-ZUo_g78my1CD4eUBSFrTbuAxPCscNoUdfsjOFBvaykOucGESLuseCahDmO0_y7RjeOUsVEj73KT-ca7aLwwi') AND (`userId`='1')
+LIMIT 1
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SELECT `id`
+FROM `sessions`
+WHERE (`token`='YMZ02UwaUPADX1_-ZUo_g78my1CD4eUBSFrTbuAxPCscNoUdfsjOFBvaykOucGESLuseCahDmO0_y7RjeOUsVEj73KT-ca7aLwwi') AND (`userId`='1')
+LIMIT 1
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SELECT `id`
+FROM `sessions`
+WHERE (`token`='YMZ02UwaUPADX1_-ZUo_g78my1CD4eUBSFrTbuAxPCscNoUdfsjOFBvaykOucGESLuseCahDmO0_y7RjeOUsVEj73KT-ca7aLwwi') AND (`userId`='1')
+LIMIT 1
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `sessions`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SHOW FULL COLUMNS FROM `sessions`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SHOW FULL COLUMNS FROM `sessions`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name,
+    rc.UPDATE_RULE,
+    rc.DELETE_RULE
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name,
+    rc.UPDATE_RULE,
+    rc.DELETE_RULE
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name,
+    rc.UPDATE_RULE,
+    rc.DELETE_RULE
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::execute] UPDATE `sessions` SET `dateUpdated`='2019-11-09 23:02:31' WHERE `id`='747'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::execute] UPDATE `sessions` SET `dateUpdated`='2019-11-09 23:02:31' WHERE `id`='747'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::execute] UPDATE `sessions` SET `dateUpdated`='2019-11-09 23:02:31' WHERE `id`='747'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SELECT `fields`.`id`, `fields`.`dateCreated`, `fields`.`dateUpdated`, `fields`.`groupId`, `fields`.`name`, `fields`.`handle`, `fields`.`context`, `fields`.`instructions`, `fields`.`translationMethod`, `fields`.`translationKeyFormat`, `fields`.`type`, `fields`.`settings`, `fields`.`uid`, `fields`.`searchable`
+FROM `fields` `fields`
+ORDER BY `fields`.`name`, `fields`.`handle`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SELECT `fields`.`id`, `fields`.`dateCreated`, `fields`.`dateUpdated`, `fields`.`groupId`, `fields`.`name`, `fields`.`handle`, `fields`.`context`, `fields`.`instructions`, `fields`.`translationMethod`, `fields`.`translationKeyFormat`, `fields`.`type`, `fields`.`settings`, `fields`.`uid`, `fields`.`searchable`
+FROM `fields` `fields`
+ORDER BY `fields`.`name`, `fields`.`handle`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SELECT `fields`.`id`, `fields`.`dateCreated`, `fields`.`dateUpdated`, `fields`.`groupId`, `fields`.`name`, `fields`.`handle`, `fields`.`context`, `fields`.`instructions`, `fields`.`translationMethod`, `fields`.`translationKeyFormat`, `fields`.`type`, `fields`.`settings`, `fields`.`uid`, `fields`.`searchable`
+FROM `fields` `fields`
+ORDER BY `fields`.`name`, `fields`.`handle`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SELECT `users`.`password`, `elements`.`id`, `elements`.`fieldLayoutId`, `elements`.`uid`, `elements`.`enabled`, `elements`.`archived`, `elements`.`dateCreated`, `elements`.`dateUpdated`, `elements_sites`.`slug`, `elements_sites`.`siteId`, `elements_sites`.`enabled` AS `enabledForSite`, `elements_sites`.`uri`, `users`.`username`, `users`.`firstName`, `users`.`lastName`, `users`.`email`, `users`.`unverifiedEmail`, `users`.`admin`, `users`.`locked`, `users`.`pending`, `users`.`suspended`, `users`.`lastLoginDate`, `users`.`lockoutDate`, `users`.`photoId`, `users`.`hasDashboard`, `content`.`id` AS `contentId`, `content`.`field_bgColor`, `content`.`field_cta`, `content`.`field_ctaUrl`, `content`.`field_description`, `content`.`field_headline`, `content`.`field_intro`, `content`.`field_richtext`, `content`.`field_subhead`
+FROM (SELECT `elements`.`id` AS `elementsId`, `elements_sites`.`id` AS `elementsSitesId`, `content`.`id` AS `contentId`
+FROM `elements` `elements`
+INNER JOIN `users` `users` ON `users`.`id` = `elements`.`id`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+INNER JOIN `content` `content` ON (`content`.`elementId` = `elements`.`id`) AND (`content`.`siteId` = `elements_sites`.`siteId`)
+WHERE (`elements_sites`.`siteId`='1') AND (`elements`.`id`='1') AND (`elements`.`archived`=FALSE) AND (`elements`.`dateDeleted` IS NULL) AND (`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)
+ORDER BY `users`.`username`
+LIMIT 1) `subquery`
+INNER JOIN `users` `users` ON `users`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements` `elements` ON `elements`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`id` = `subquery`.`elementsSitesId`
+INNER JOIN `content` `content` ON `content`.`id` = `subquery`.`contentId`
+ORDER BY `users`.`username`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SELECT `users`.`password`, `elements`.`id`, `elements`.`fieldLayoutId`, `elements`.`uid`, `elements`.`enabled`, `elements`.`archived`, `elements`.`dateCreated`, `elements`.`dateUpdated`, `elements_sites`.`slug`, `elements_sites`.`siteId`, `elements_sites`.`enabled` AS `enabledForSite`, `elements_sites`.`uri`, `users`.`username`, `users`.`firstName`, `users`.`lastName`, `users`.`email`, `users`.`unverifiedEmail`, `users`.`admin`, `users`.`locked`, `users`.`pending`, `users`.`suspended`, `users`.`lastLoginDate`, `users`.`lockoutDate`, `users`.`photoId`, `users`.`hasDashboard`, `content`.`id` AS `contentId`, `content`.`field_bgColor`, `content`.`field_cta`, `content`.`field_ctaUrl`, `content`.`field_description`, `content`.`field_headline`, `content`.`field_intro`, `content`.`field_richtext`, `content`.`field_subhead`
+FROM (SELECT `elements`.`id` AS `elementsId`, `elements_sites`.`id` AS `elementsSitesId`, `content`.`id` AS `contentId`
+FROM `elements` `elements`
+INNER JOIN `users` `users` ON `users`.`id` = `elements`.`id`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+INNER JOIN `content` `content` ON (`content`.`elementId` = `elements`.`id`) AND (`content`.`siteId` = `elements_sites`.`siteId`)
+WHERE (`elements_sites`.`siteId`='1') AND (`elements`.`id`='1') AND (`elements`.`archived`=FALSE) AND (`elements`.`dateDeleted` IS NULL) AND (`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)
+ORDER BY `users`.`username`
+LIMIT 1) `subquery`
+INNER JOIN `users` `users` ON `users`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements` `elements` ON `elements`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`id` = `subquery`.`elementsSitesId`
+INNER JOIN `content` `content` ON `content`.`id` = `subquery`.`contentId`
+ORDER BY `users`.`username`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SELECT `users`.`password`, `elements`.`id`, `elements`.`fieldLayoutId`, `elements`.`uid`, `elements`.`enabled`, `elements`.`archived`, `elements`.`dateCreated`, `elements`.`dateUpdated`, `elements_sites`.`slug`, `elements_sites`.`siteId`, `elements_sites`.`enabled` AS `enabledForSite`, `elements_sites`.`uri`, `users`.`username`, `users`.`firstName`, `users`.`lastName`, `users`.`email`, `users`.`unverifiedEmail`, `users`.`admin`, `users`.`locked`, `users`.`pending`, `users`.`suspended`, `users`.`lastLoginDate`, `users`.`lockoutDate`, `users`.`photoId`, `users`.`hasDashboard`, `content`.`id` AS `contentId`, `content`.`field_bgColor`, `content`.`field_cta`, `content`.`field_ctaUrl`, `content`.`field_description`, `content`.`field_headline`, `content`.`field_intro`, `content`.`field_richtext`, `content`.`field_subhead`
+FROM (SELECT `elements`.`id` AS `elementsId`, `elements_sites`.`id` AS `elementsSitesId`, `content`.`id` AS `contentId`
+FROM `elements` `elements`
+INNER JOIN `users` `users` ON `users`.`id` = `elements`.`id`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+INNER JOIN `content` `content` ON (`content`.`elementId` = `elements`.`id`) AND (`content`.`siteId` = `elements_sites`.`siteId`)
+WHERE (`elements_sites`.`siteId`='1') AND (`elements`.`id`='1') AND (`elements`.`archived`=FALSE) AND (`elements`.`dateDeleted` IS NULL) AND (`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)
+ORDER BY `users`.`username`
+LIMIT 1) `subquery`
+INNER JOIN `users` `users` ON `users`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements` `elements` ON `elements`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`id` = `subquery`.`elementsSitesId`
+INNER JOIN `content` `content` ON `content`.`id` = `subquery`.`contentId`
+ORDER BY `users`.`username`
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='favicon.ico') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: favicon.ico',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][craft\web\UrlManager::_getMatchedUrlRoute] [
+    'rule' => 'URL Rule: debug',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][craft\web\UrlManager::_getMatchedUrlRoute] [
+    'rule' => 'URL Rule: debug/<controller:[\\w\\-]+>/<action:[\\w\\-]+>',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: favicon.ico',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: favicon.ico in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('favicon.ico', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:02:31 [-][1][1rmned6cqbitq3vahbq30odvol][info][application] $_GET = [
+    'p' => '/favicon.ico'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CraftSessionId' => '1rmned6cqbitq3vahbq30odvol'
+    '1031b8c41dfff97a311a7ac99863bdc5_identity' => '2532999219a179647a310c8589fe9144e75c90d4794b5f6e9d9062a7ebf89f1ca:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_identity\";i:1;s:249:\"[\"1\",\"[\\\"YMZ02UwaUPADX1_-ZUo_g78my1CD4eUBSFrTbuAxPCscNoUdfsjOFBvaykOucGESLuseCahDmO0_y7RjeOUsVEj73KT-ca7aLwwi\\\",null,\\\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36\\\"]\",3600]\";}'
+    'CRAFT_CSRF_TOKEN' => '•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5_username' => '3d3b13aff9f63f2fa8b9c4880a017587545c07b9a1d09ed904876777f8e32f60a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_username\";i:1;s:11:\"kamicrafted\";}'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    '1031b8c41dfff97a311a7ac99863bdc5__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__id' => '1'
+    '1031b8c41dfff97a311a7ac99863bdc5__expire' => 1573344151
+    'enableDebugToolbarForSite' => true
+    'enableDebugToolbarForCp' => true
+    'commerce_cart' => '9198bd80f1011905085b17d2cb2ecf6f'
+    'commerce_customer' => '1'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CraftSessionId=1rmned6cqbitq3vahbq30odvol; 1031b8c41dfff97a311a7ac99863bdc5_identity=2532999219a179647a310c8589fe9144e75c90d4794b5f6e9d9062a7ebf89f1ca%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A249%3A%22%5B%221%22%2C%22%5B%5C%22YMZ02UwaUPADX1_-ZUo_g78my1CD4eUBSFrTbuAxPCscNoUdfsjOFBvaykOucGESLuseCahDmO0_y7RjeOUsVEj73KT-ca7aLwwi%5C%22%2Cnull%2C%5C%22Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_14_6%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F78.0.3904.97+Safari%2F537.36%5C%22%5D%22%2C3600%5D%22%3B%7D; CRAFT_CSRF_TOKEN=4226eb1a3ce4cbf339d7a84c53ffd6a11d3062a1ba65c021967e985e5d4f13e2a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22ZiW9HHoM13gyNEUbDymhaLG6Bk_F4tsiZ79S1Wa7%7Cc8d5fbb1179efde975a90d5b4c0d159d22fdbbb700eae6e544afe9cb0e9dc12cZiW9HHoM13gyNEUbDymhaLG6Bk_F4tsiZ79S1Wa7%7C1%7C%242y%2413%24PAb.YwXYi0csnQzfOa4Ap.cgPM61qeCpwZr96Qwz%2FOaqEMZSixloy%22%3B%7D; 1031b8c41dfff97a311a7ac99863bdc5_username=3d3b13aff9f63f2fa8b9c4880a017587545c07b9a1d09ed904876777f8e32f60a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A11%3A%22kamicrafted%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'https://dev.mavenshake.com/'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '55900'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'HTTPS' => 'on'
+    'REQUEST_SCHEME' => 'https'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/favicon.ico'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/favicon.ico'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573340551.3389
+    'REQUEST_TIME' => 1573340551
+    'ENVIRONMENT' => 'dev'
+    'SYSTEM_NAME' => 'Mavenshake'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'ASSET_BASE_URL' => 'https://testing.kamicrafted.com/images'
+    'ASSET_BASE_FOLDER' => 'images'
+    'SYSTEM_EMAIL' => 'hello@kamicrafted.com'
+    'SENDER_NAME' => 'MavenShake'
+    'GMAIL_USER' => 'hello@kamicrafted.com'
+    'GMAIL_PASSWORD' => '••••••••••••'
+    'STRIPE_KEY_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_KEY_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'DEFAULT_SITE_URL' => 'https://testing.kamicrafted.com'
+]
+2019-11-09 15:02:31 [-][1][-][info][yii\db\Command::query] SELECT `id`, `type`, `uid`
+FROM `fieldlayouts`
+WHERE (`dateDeleted` IS NULL) AND (`type`='craft\\elements\\User')
+LIMIT 1
+2019-11-09 15:02:31 [-][1][-][profile begin][yii\db\Command::query] SELECT `id`, `type`, `uid`
+FROM `fieldlayouts`
+WHERE (`dateDeleted` IS NULL) AND (`type`='craft\\elements\\User')
+LIMIT 1
+2019-11-09 15:02:31 [-][1][-][profile end][yii\db\Command::query] SELECT `id`, `type`, `uid`
+FROM `fieldlayouts`
+WHERE (`dateDeleted` IS NULL) AND (`type`='craft\\elements\\User')
+LIMIT 1
+2019-11-09 15:02:31 [-][1][-][info][yii\db\Command::query] SELECT `preferences`
+FROM `userpreferences`
+WHERE `userId`=1
+LIMIT 1
+2019-11-09 15:02:31 [-][1][-][profile begin][yii\db\Command::query] SELECT `preferences`
+FROM `userpreferences`
+WHERE `userId`=1
+LIMIT 1
+2019-11-09 15:02:31 [-][1][-][profile end][yii\db\Command::query] SELECT `preferences`
+FROM `userpreferences`
+WHERE `userId`=1
+LIMIT 1
+2019-11-09 15:02:31 [-][1][-][info][application] $_GET = [
+    'p' => '/favicon.ico'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CraftSessionId' => '1rmned6cqbitq3vahbq30odvol'
+    '1031b8c41dfff97a311a7ac99863bdc5_identity' => '2532999219a179647a310c8589fe9144e75c90d4794b5f6e9d9062a7ebf89f1ca:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_identity\";i:1;s:249:\"[\"1\",\"[\\\"YMZ02UwaUPADX1_-ZUo_g78my1CD4eUBSFrTbuAxPCscNoUdfsjOFBvaykOucGESLuseCahDmO0_y7RjeOUsVEj73KT-ca7aLwwi\\\",null,\\\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36\\\"]\",3600]\";}'
+    'CRAFT_CSRF_TOKEN' => '•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5_username' => '3d3b13aff9f63f2fa8b9c4880a017587545c07b9a1d09ed904876777f8e32f60a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_username\";i:1;s:11:\"kamicrafted\";}'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    '1031b8c41dfff97a311a7ac99863bdc5__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__id' => '1'
+    '1031b8c41dfff97a311a7ac99863bdc5__expire' => 1573344151
+    'enableDebugToolbarForSite' => true
+    'enableDebugToolbarForCp' => true
+    'commerce_cart' => '9198bd80f1011905085b17d2cb2ecf6f'
+    'commerce_customer' => '1'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CraftSessionId=1rmned6cqbitq3vahbq30odvol; 1031b8c41dfff97a311a7ac99863bdc5_identity=2532999219a179647a310c8589fe9144e75c90d4794b5f6e9d9062a7ebf89f1ca%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A249%3A%22%5B%221%22%2C%22%5B%5C%22YMZ02UwaUPADX1_-ZUo_g78my1CD4eUBSFrTbuAxPCscNoUdfsjOFBvaykOucGESLuseCahDmO0_y7RjeOUsVEj73KT-ca7aLwwi%5C%22%2Cnull%2C%5C%22Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_14_6%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F78.0.3904.97+Safari%2F537.36%5C%22%5D%22%2C3600%5D%22%3B%7D; CRAFT_CSRF_TOKEN=4226eb1a3ce4cbf339d7a84c53ffd6a11d3062a1ba65c021967e985e5d4f13e2a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22ZiW9HHoM13gyNEUbDymhaLG6Bk_F4tsiZ79S1Wa7%7Cc8d5fbb1179efde975a90d5b4c0d159d22fdbbb700eae6e544afe9cb0e9dc12cZiW9HHoM13gyNEUbDymhaLG6Bk_F4tsiZ79S1Wa7%7C1%7C%242y%2413%24PAb.YwXYi0csnQzfOa4Ap.cgPM61qeCpwZr96Qwz%2FOaqEMZSixloy%22%3B%7D; 1031b8c41dfff97a311a7ac99863bdc5_username=3d3b13aff9f63f2fa8b9c4880a017587545c07b9a1d09ed904876777f8e32f60a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A11%3A%22kamicrafted%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'https://dev.mavenshake.com/'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '55900'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'HTTPS' => 'on'
+    'REQUEST_SCHEME' => 'https'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/favicon.ico'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/favicon.ico'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573340551.3389
+    'REQUEST_TIME' => 1573340551
+    'ENVIRONMENT' => 'dev'
+    'SYSTEM_NAME' => 'Mavenshake'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'ASSET_BASE_URL' => 'https://testing.kamicrafted.com/images'
+    'ASSET_BASE_FOLDER' => 'images'
+    'SYSTEM_EMAIL' => 'hello@kamicrafted.com'
+    'SENDER_NAME' => 'MavenShake'
+    'GMAIL_USER' => 'hello@kamicrafted.com'
+    'GMAIL_PASSWORD' => '••••••••••••'
+    'STRIPE_KEY_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_KEY_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'DEFAULT_SITE_URL' => 'https://testing.kamicrafted.com'
+]
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=mavenshake-dev;port=3306;
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SELECT *
+FROM `info`
+LIMIT 1
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SELECT `s`.`id`, `s`.`groupId`, `s`.`name`, `s`.`handle`, `language`, `s`.`primary`, `s`.`hasUrls`, `s`.`baseUrl`, `s`.`sortOrder`, `s`.`uid`, `s`.`dateCreated`, `s`.`dateUpdated`
+FROM `sites` `s`
+INNER JOIN `sitegroups` `sg` ON `sg`.`id` = `s`.`groupId`
+WHERE (`s`.`dateDeleted` IS NULL) AND (`sg`.`dateDeleted` IS NULL)
+ORDER BY `sg`.`name`, `s`.`sortOrder`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SELECT `id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `installDate`, `licensedEdition`
+FROM `plugins`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][olivestudio\olivemenus\Olivemenus::init] Olivemenus plugin loaded
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\web\Session::open] Session started
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\Module::getModule] Loading module: debug
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SELECT `id`
+FROM `sessions`
+WHERE (`token`='UBW5Cl8U7IT2CYOKfMVTvsrZDbKJ_PGpjKarIOCaphzIv98awsD15xxLx1hDIJR4pFivPrGoMPCog-Umrlsog7lkvNiiBl8SLKhc') AND (`userId`='1')
+LIMIT 1
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SELECT `id`
+FROM `sessions`
+WHERE (`token`='UBW5Cl8U7IT2CYOKfMVTvsrZDbKJ_PGpjKarIOCaphzIv98awsD15xxLx1hDIJR4pFivPrGoMPCog-Umrlsog7lkvNiiBl8SLKhc') AND (`userId`='1')
+LIMIT 1
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SELECT `id`
+FROM `sessions`
+WHERE (`token`='UBW5Cl8U7IT2CYOKfMVTvsrZDbKJ_PGpjKarIOCaphzIv98awsD15xxLx1hDIJR4pFivPrGoMPCog-Umrlsog7lkvNiiBl8SLKhc') AND (`userId`='1')
+LIMIT 1
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `sessions`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SHOW FULL COLUMNS FROM `sessions`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SHOW FULL COLUMNS FROM `sessions`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name,
+    rc.UPDATE_RULE,
+    rc.DELETE_RULE
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name,
+    rc.UPDATE_RULE,
+    rc.DELETE_RULE
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name,
+    rc.UPDATE_RULE,
+    rc.DELETE_RULE
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'sessions' AND kcu.table_name = 'sessions'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::execute] UPDATE `sessions` SET `dateUpdated`='2019-11-09 23:07:33' WHERE `id`='747'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::execute] UPDATE `sessions` SET `dateUpdated`='2019-11-09 23:07:33' WHERE `id`='747'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::execute] UPDATE `sessions` SET `dateUpdated`='2019-11-09 23:07:33' WHERE `id`='747'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SELECT `fields`.`id`, `fields`.`dateCreated`, `fields`.`dateUpdated`, `fields`.`groupId`, `fields`.`name`, `fields`.`handle`, `fields`.`context`, `fields`.`instructions`, `fields`.`translationMethod`, `fields`.`translationKeyFormat`, `fields`.`type`, `fields`.`settings`, `fields`.`uid`, `fields`.`searchable`
+FROM `fields` `fields`
+ORDER BY `fields`.`name`, `fields`.`handle`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SELECT `fields`.`id`, `fields`.`dateCreated`, `fields`.`dateUpdated`, `fields`.`groupId`, `fields`.`name`, `fields`.`handle`, `fields`.`context`, `fields`.`instructions`, `fields`.`translationMethod`, `fields`.`translationKeyFormat`, `fields`.`type`, `fields`.`settings`, `fields`.`uid`, `fields`.`searchable`
+FROM `fields` `fields`
+ORDER BY `fields`.`name`, `fields`.`handle`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SELECT `fields`.`id`, `fields`.`dateCreated`, `fields`.`dateUpdated`, `fields`.`groupId`, `fields`.`name`, `fields`.`handle`, `fields`.`context`, `fields`.`instructions`, `fields`.`translationMethod`, `fields`.`translationKeyFormat`, `fields`.`type`, `fields`.`settings`, `fields`.`uid`, `fields`.`searchable`
+FROM `fields` `fields`
+ORDER BY `fields`.`name`, `fields`.`handle`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SELECT `users`.`password`, `elements`.`id`, `elements`.`fieldLayoutId`, `elements`.`uid`, `elements`.`enabled`, `elements`.`archived`, `elements`.`dateCreated`, `elements`.`dateUpdated`, `elements_sites`.`slug`, `elements_sites`.`siteId`, `elements_sites`.`enabled` AS `enabledForSite`, `elements_sites`.`uri`, `users`.`username`, `users`.`firstName`, `users`.`lastName`, `users`.`email`, `users`.`unverifiedEmail`, `users`.`admin`, `users`.`locked`, `users`.`pending`, `users`.`suspended`, `users`.`lastLoginDate`, `users`.`lockoutDate`, `users`.`photoId`, `users`.`hasDashboard`, `content`.`id` AS `contentId`, `content`.`field_bgColor`, `content`.`field_cta`, `content`.`field_ctaUrl`, `content`.`field_description`, `content`.`field_headline`, `content`.`field_intro`, `content`.`field_richtext`, `content`.`field_subhead`
+FROM (SELECT `elements`.`id` AS `elementsId`, `elements_sites`.`id` AS `elementsSitesId`, `content`.`id` AS `contentId`
+FROM `elements` `elements`
+INNER JOIN `users` `users` ON `users`.`id` = `elements`.`id`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+INNER JOIN `content` `content` ON (`content`.`elementId` = `elements`.`id`) AND (`content`.`siteId` = `elements_sites`.`siteId`)
+WHERE (`elements_sites`.`siteId`='1') AND (`elements`.`id`='1') AND (`elements`.`archived`=FALSE) AND (`elements`.`dateDeleted` IS NULL) AND (`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)
+ORDER BY `users`.`username`
+LIMIT 1) `subquery`
+INNER JOIN `users` `users` ON `users`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements` `elements` ON `elements`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`id` = `subquery`.`elementsSitesId`
+INNER JOIN `content` `content` ON `content`.`id` = `subquery`.`contentId`
+ORDER BY `users`.`username`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SELECT `users`.`password`, `elements`.`id`, `elements`.`fieldLayoutId`, `elements`.`uid`, `elements`.`enabled`, `elements`.`archived`, `elements`.`dateCreated`, `elements`.`dateUpdated`, `elements_sites`.`slug`, `elements_sites`.`siteId`, `elements_sites`.`enabled` AS `enabledForSite`, `elements_sites`.`uri`, `users`.`username`, `users`.`firstName`, `users`.`lastName`, `users`.`email`, `users`.`unverifiedEmail`, `users`.`admin`, `users`.`locked`, `users`.`pending`, `users`.`suspended`, `users`.`lastLoginDate`, `users`.`lockoutDate`, `users`.`photoId`, `users`.`hasDashboard`, `content`.`id` AS `contentId`, `content`.`field_bgColor`, `content`.`field_cta`, `content`.`field_ctaUrl`, `content`.`field_description`, `content`.`field_headline`, `content`.`field_intro`, `content`.`field_richtext`, `content`.`field_subhead`
+FROM (SELECT `elements`.`id` AS `elementsId`, `elements_sites`.`id` AS `elementsSitesId`, `content`.`id` AS `contentId`
+FROM `elements` `elements`
+INNER JOIN `users` `users` ON `users`.`id` = `elements`.`id`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+INNER JOIN `content` `content` ON (`content`.`elementId` = `elements`.`id`) AND (`content`.`siteId` = `elements_sites`.`siteId`)
+WHERE (`elements_sites`.`siteId`='1') AND (`elements`.`id`='1') AND (`elements`.`archived`=FALSE) AND (`elements`.`dateDeleted` IS NULL) AND (`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)
+ORDER BY `users`.`username`
+LIMIT 1) `subquery`
+INNER JOIN `users` `users` ON `users`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements` `elements` ON `elements`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`id` = `subquery`.`elementsSitesId`
+INNER JOIN `content` `content` ON `content`.`id` = `subquery`.`contentId`
+ORDER BY `users`.`username`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SELECT `users`.`password`, `elements`.`id`, `elements`.`fieldLayoutId`, `elements`.`uid`, `elements`.`enabled`, `elements`.`archived`, `elements`.`dateCreated`, `elements`.`dateUpdated`, `elements_sites`.`slug`, `elements_sites`.`siteId`, `elements_sites`.`enabled` AS `enabledForSite`, `elements_sites`.`uri`, `users`.`username`, `users`.`firstName`, `users`.`lastName`, `users`.`email`, `users`.`unverifiedEmail`, `users`.`admin`, `users`.`locked`, `users`.`pending`, `users`.`suspended`, `users`.`lastLoginDate`, `users`.`lockoutDate`, `users`.`photoId`, `users`.`hasDashboard`, `content`.`id` AS `contentId`, `content`.`field_bgColor`, `content`.`field_cta`, `content`.`field_ctaUrl`, `content`.`field_description`, `content`.`field_headline`, `content`.`field_intro`, `content`.`field_richtext`, `content`.`field_subhead`
+FROM (SELECT `elements`.`id` AS `elementsId`, `elements_sites`.`id` AS `elementsSitesId`, `content`.`id` AS `contentId`
+FROM `elements` `elements`
+INNER JOIN `users` `users` ON `users`.`id` = `elements`.`id`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+INNER JOIN `content` `content` ON (`content`.`elementId` = `elements`.`id`) AND (`content`.`siteId` = `elements_sites`.`siteId`)
+WHERE (`elements_sites`.`siteId`='1') AND (`elements`.`id`='1') AND (`elements`.`archived`=FALSE) AND (`elements`.`dateDeleted` IS NULL) AND (`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)
+ORDER BY `users`.`username`
+LIMIT 1) `subquery`
+INNER JOIN `users` `users` ON `users`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements` `elements` ON `elements`.`id` = `subquery`.`elementsId`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`id` = `subquery`.`elementsSitesId`
+INNER JOIN `content` `content` ON `content`.`id` = `subquery`.`contentId`
+ORDER BY `users`.`username`
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][craft\web\UrlManager::_getTokenRoute] [
+    'rule' => 'Token',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='admin/settings/general') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile begin][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='admin/settings/general') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][profile end][yii\db\Command::query] SELECT `elements`.`id`, `elements`.`type`
+FROM `elements` `elements`
+INNER JOIN `elements_sites` `elements_sites` ON `elements_sites`.`elementId` = `elements`.`id`
+WHERE (`elements_sites`.`siteId`=1) AND (`elements`.`dateDeleted` IS NULL) AND ((`elements`.`draftId` IS NULL) AND (`elements`.`revisionId` IS NULL)) AND (`elements_sites`.`uri`='admin/settings/general') AND ((`elements_sites`.`enabled`=TRUE) AND (`elements`.`enabled`=TRUE) AND (`elements`.`archived`=FALSE))
+LIMIT 1
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][craft\web\UrlManager::_getMatchedElementRoute] [
+    'rule' => 'Element URI: admin/settings/general',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][craft\web\UrlManager::_getMatchedUrlRoute] [
+    'rule' => 'URL Rule: debug',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][craft\web\UrlManager::_getMatchedUrlRoute] [
+    'rule' => 'URL Rule: debug/<controller:[\\w\\-]+>/<action:[\\w\\-]+>',
+    'match' => false,
+    'parent' => null,
+]
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][craft\web\UrlManager::_getTemplateRoute] [
+    'rule' => 'Template: admin/settings/general',
+    'match' => true,
+    'parent' => null,
+]
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\web\Application::handleRequest] Route requested: 'templates/render'
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\Controller::runAction] Route to run: templates/render
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\InlineAction::runWithParams] Running action: craft\controllers\TemplatesController::actionRender()
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Template not found: admin/settings/general in /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/controllers/TemplatesController.php:93
+Stack trace:
+#0 [internal function]: craft\controllers\TemplatesController->actionRender('admin/settings/...', Array)
+#1 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Controller.php(187): yii\base\Controller->runAction('render', Array)
+#4 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Module.php(528): craft\web\Controller->runAction('render', Array)
+#5 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(299): yii\base\Module->runAction('templates/rende...', Array)
+#6 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/web/Application.php(103): craft\web\Application->runAction('templates/rende...', Array)
+#7 /var/www/dev.mavenshake.com/vendor/craftcms/cms/src/web/Application.php(284): yii\web\Application->handleRequest(Object(craft\web\Request))
+#8 /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/base/Application.php(386): craft\web\Application->handleRequest(Object(craft\web\Request))
+#9 /var/www/dev.mavenshake.com/html/index.php(21): yii\base\Application->run()
+#10 {main}
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/exception.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][trace][yii\base\View::renderFile] Rendering view file: /var/www/dev.mavenshake.com/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php
+2019-11-09 15:07:33 [-][1][s6am2iaesjs11d3urib7ahedo5][info][application] $_GET = [
+    'p' => '/admin/settings/general'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CRAFT_CSRF_TOKEN' => '•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5_username' => '3d3b13aff9f63f2fa8b9c4880a017587545c07b9a1d09ed904876777f8e32f60a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_username\";i:1;s:11:\"kamicrafted\";}'
+    'CraftSessionId' => 's6am2iaesjs11d3urib7ahedo5'
+    '1031b8c41dfff97a311a7ac99863bdc5_identity' => 'd526c5b971f0e3dcf93476e42d3a356587a7a871ca3f12b59e0dd5b0e18acddda:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_identity\";i:1;s:249:\"[\"1\",\"[\\\"UBW5Cl8U7IT2CYOKfMVTvsrZDbKJ_PGpjKarIOCaphzIv98awsD15xxLx1hDIJR4pFivPrGoMPCog-Umrlsog7lkvNiiBl8SLKhc\\\",null,\\\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36\\\"]\",3600]\";}'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    'commerce_cart' => '9198bd80f1011905085b17d2cb2ecf6f'
+    '1031b8c41dfff97a311a7ac99863bdc5__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__id' => '1'
+    '1031b8c41dfff97a311a7ac99863bdc5__expire' => 1573344453
+    'enableDebugToolbarForSite' => true
+    'enableDebugToolbarForCp' => true
+    'commerce_customer' => '1'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CRAFT_CSRF_TOKEN=4226eb1a3ce4cbf339d7a84c53ffd6a11d3062a1ba65c021967e985e5d4f13e2a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22ZiW9HHoM13gyNEUbDymhaLG6Bk_F4tsiZ79S1Wa7%7Cc8d5fbb1179efde975a90d5b4c0d159d22fdbbb700eae6e544afe9cb0e9dc12cZiW9HHoM13gyNEUbDymhaLG6Bk_F4tsiZ79S1Wa7%7C1%7C%242y%2413%24PAb.YwXYi0csnQzfOa4Ap.cgPM61qeCpwZr96Qwz%2FOaqEMZSixloy%22%3B%7D; 1031b8c41dfff97a311a7ac99863bdc5_username=3d3b13aff9f63f2fa8b9c4880a017587545c07b9a1d09ed904876777f8e32f60a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A11%3A%22kamicrafted%22%3B%7D; CraftSessionId=s6am2iaesjs11d3urib7ahedo5; 1031b8c41dfff97a311a7ac99863bdc5_identity=d526c5b971f0e3dcf93476e42d3a356587a7a871ca3f12b59e0dd5b0e18acddda%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A249%3A%22%5B%221%22%2C%22%5B%5C%22UBW5Cl8U7IT2CYOKfMVTvsrZDbKJ_PGpjKarIOCaphzIv98awsD15xxLx1hDIJR4pFivPrGoMPCog-Umrlsog7lkvNiiBl8SLKhc%5C%22%2Cnull%2C%5C%22Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_14_6%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F78.0.3904.97+Safari%2F537.36%5C%22%5D%22%2C3600%5D%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'https://dev.mavenshake.com/admin/settings'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '55992'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'HTTPS' => 'on'
+    'REQUEST_SCHEME' => 'https'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/admin/settings/general'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/admin/settings/general'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573340853.2095
+    'REQUEST_TIME' => 1573340853
+    'ENVIRONMENT' => 'dev'
+    'SYSTEM_NAME' => 'Mavenshake'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake-dev'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'ASSET_BASE_URL' => 'https://dev.mavenshake.com/images'
+    'ASSET_BASE_FOLDER' => 'images'
+    'SYSTEM_EMAIL' => 'hello@kamicrafted.com'
+    'SENDER_NAME' => 'MavenShake'
+    'GMAIL_USER' => 'hello@kamicrafted.com'
+    'GMAIL_PASSWORD' => '••••••••••••'
+    'STRIPE_KEY_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_KEY_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'DEFAULT_SITE_URL' => 'https://dev.mavenshake.com'
+]
+2019-11-09 15:07:33 [-][1][-][info][yii\db\Command::query] SELECT `id`, `type`, `uid`
+FROM `fieldlayouts`
+WHERE (`dateDeleted` IS NULL) AND (`type`='craft\\elements\\User')
+LIMIT 1
+2019-11-09 15:07:33 [-][1][-][profile begin][yii\db\Command::query] SELECT `id`, `type`, `uid`
+FROM `fieldlayouts`
+WHERE (`dateDeleted` IS NULL) AND (`type`='craft\\elements\\User')
+LIMIT 1
+2019-11-09 15:07:33 [-][1][-][profile end][yii\db\Command::query] SELECT `id`, `type`, `uid`
+FROM `fieldlayouts`
+WHERE (`dateDeleted` IS NULL) AND (`type`='craft\\elements\\User')
+LIMIT 1
+2019-11-09 15:07:33 [-][1][-][info][yii\db\Command::query] SELECT `preferences`
+FROM `userpreferences`
+WHERE `userId`=1
+LIMIT 1
+2019-11-09 15:07:33 [-][1][-][profile begin][yii\db\Command::query] SELECT `preferences`
+FROM `userpreferences`
+WHERE `userId`=1
+LIMIT 1
+2019-11-09 15:07:33 [-][1][-][profile end][yii\db\Command::query] SELECT `preferences`
+FROM `userpreferences`
+WHERE `userId`=1
+LIMIT 1
+2019-11-09 15:07:33 [-][1][-][info][application] $_GET = [
+    'p' => '/admin/settings/general'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'CRAFT_CSRF_TOKEN' => '•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5_username' => '3d3b13aff9f63f2fa8b9c4880a017587545c07b9a1d09ed904876777f8e32f60a:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_username\";i:1;s:11:\"kamicrafted\";}'
+    'CraftSessionId' => 's6am2iaesjs11d3urib7ahedo5'
+    '1031b8c41dfff97a311a7ac99863bdc5_identity' => 'd526c5b971f0e3dcf93476e42d3a356587a7a871ca3f12b59e0dd5b0e18acddda:2:{i:0;s:41:\"1031b8c41dfff97a311a7ac99863bdc5_identity\";i:1;s:249:\"[\"1\",\"[\\\"UBW5Cl8U7IT2CYOKfMVTvsrZDbKJ_PGpjKarIOCaphzIv98awsD15xxLx1hDIJR4pFivPrGoMPCog-Umrlsog7lkvNiiBl8SLKhc\\\",null,\\\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36\\\"]\",3600]\";}'
+]
+
+$_SESSION = [
+    'bd62416aa8538ede709019a5e113eea5__flash' => []
+    'commerce_cart' => '9198bd80f1011905085b17d2cb2ecf6f'
+    '1031b8c41dfff97a311a7ac99863bdc5__token' => '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
+    '1031b8c41dfff97a311a7ac99863bdc5__id' => '1'
+    '1031b8c41dfff97a311a7ac99863bdc5__expire' => 1573344453
+    'enableDebugToolbarForSite' => true
+    'enableDebugToolbarForCp' => true
+    'commerce_customer' => '1'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'CRAFT_CSRF_TOKEN=4226eb1a3ce4cbf339d7a84c53ffd6a11d3062a1ba65c021967e985e5d4f13e2a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22ZiW9HHoM13gyNEUbDymhaLG6Bk_F4tsiZ79S1Wa7%7Cc8d5fbb1179efde975a90d5b4c0d159d22fdbbb700eae6e544afe9cb0e9dc12cZiW9HHoM13gyNEUbDymhaLG6Bk_F4tsiZ79S1Wa7%7C1%7C%242y%2413%24PAb.YwXYi0csnQzfOa4Ap.cgPM61qeCpwZr96Qwz%2FOaqEMZSixloy%22%3B%7D; 1031b8c41dfff97a311a7ac99863bdc5_username=3d3b13aff9f63f2fa8b9c4880a017587545c07b9a1d09ed904876777f8e32f60a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A11%3A%22kamicrafted%22%3B%7D; CraftSessionId=s6am2iaesjs11d3urib7ahedo5; 1031b8c41dfff97a311a7ac99863bdc5_identity=d526c5b971f0e3dcf93476e42d3a356587a7a871ca3f12b59e0dd5b0e18acddda%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A249%3A%22%5B%221%22%2C%22%5B%5C%22UBW5Cl8U7IT2CYOKfMVTvsrZDbKJ_PGpjKarIOCaphzIv98awsD15xxLx1hDIJR4pFivPrGoMPCog-Umrlsog7lkvNiiBl8SLKhc%5C%22%2Cnull%2C%5C%22Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_14_6%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F78.0.3904.97+Safari%2F537.36%5C%22%5D%22%2C3600%5D%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,la;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'https://dev.mavenshake.com/admin/settings'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'dev.mavenshake.com'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => 'dev.mavenshake.com'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '167.71.97.35'
+    'REMOTE_PORT' => '55992'
+    'REMOTE_ADDR' => '96.234.49.129'
+    'SERVER_SOFTWARE' => 'nginx/1.14.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'HTTPS' => 'on'
+    'REQUEST_SCHEME' => 'https'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/var/www/dev.mavenshake.com/html'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/admin/settings/general'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'p=/admin/settings/general'
+    'SCRIPT_FILENAME' => '/var/www/dev.mavenshake.com/html/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573340853.2095
+    'REQUEST_TIME' => 1573340853
+    'ENVIRONMENT' => 'dev'
+    'SYSTEM_NAME' => 'Mavenshake'
+    'SECURITY_KEY' => '••••••••••••••••••••••••••••••••'
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => '••••••••••••'
+    'DB_DATABASE' => 'mavenshake-dev'
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => '3306'
+    'ASSET_BASE_URL' => 'https://dev.mavenshake.com/images'
+    'ASSET_BASE_FOLDER' => 'images'
+    'SYSTEM_EMAIL' => 'hello@kamicrafted.com'
+    'SENDER_NAME' => 'MavenShake'
+    'GMAIL_USER' => 'hello@kamicrafted.com'
+    'GMAIL_PASSWORD' => '••••••••••••'
+    'STRIPE_KEY_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_LIVE' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_KEY_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'STRIPE_SECRET_TEST' => '••••••••••••••••••••••••••••••••••••••••••'
+    'DEFAULT_SITE_URL' => 'https://dev.mavenshake.com'
+]
