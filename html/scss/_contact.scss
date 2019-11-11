@@ -1,0 +1,151 @@
+.view-contact {
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: space-between;
+
+    &__form {
+      flex: 1 0 auto;
+
+      .button {
+        margin-top: 25px;
+      }
+    }
+
+    &__info {
+      min-width: 400px;
+      margin: 25px 0 0 50px;
+      // background: white;
+
+      iframe {
+        display: block;
+        width: 100%;
+        height: 250px;
+        margin: 0;
+        border-radius: 4px 4px 0 0;
+      }
+    }
+
+    &__address {
+      padding: 20px;
+      font-size: 16px;
+      background-color: white;
+      border-radius: 0 0 4px 4px;
+    }
+
+    &__llc {
+      margin-top: 20px;
+      // padding: 20px;
+      font-size: 16px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    &__name {
+      font-size: 18px;
+    }
+
+    hr {
+      margin: 20px 0;
+      border: none;
+      border: 1px solid #e0e0e0;
+    }
+  }
+}
+
+/* ==============================================
+RESPONSIVE - MOBILE & TABLET
+============================================== */
+@media (max-width: $mq-lg) {
+  .view-contact {
+    .contact {
+      flex-direction: column;
+
+      &__info {
+        margin: 25px 0 0;
+      }
+    }
+  }
+}
+
+
+label {
+  font-weight: bold;
+  margin: 15px 0 5px;
+  font-size: .9em;
+}
+
+input {
+  &[type="text"],
+  &[type="email"],
+  &[type="number"],
+  &[type="file"] {
+    padding: 10px;
+    box-shadow: inset 0 1px 3px rgba(black, .2);
+    border: 1px solid rgba(black, .2);
+    border-radius: 2px;
+  }
+
+  &[type="email"],
+  &[type="text"] {
+    width: 100%;
+  }
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  box-shadow: inset 0 1px 3px rgba(black, .2);
+  border: 1px solid rgba(black, .2);
+  border-radius: 2px;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  width: 100%;
+  padding: 20px 50px;
+  margin: 0 0 1em 0;
+  text-align: center;
+  font-size: .8em;
+  font-weight: 500;
+  color: white;
+  background-color: white;
+  border: 1px dashed #c0c0c0;
+  border-radius: 4px;
+  color: $color-text;
+  display: inline-block;
+  transition: all .15s $ease-in-out-quart;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  border : 1px dashed $color-link;
+  background-color: lighten($color-link, 40%);
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+	pointer-events: none;
+}
+
+.label--floating {
+  margin-top: 5px;
+}

@@ -13,6 +13,7 @@ body {
 }
 
 #main {
+  min-height: calc(100vh - 370px);
   margin-top: 0;
   padding-top: 0;
 }
@@ -61,6 +62,34 @@ CONTAINER
   }
 }
 
+/* ============================================== */
+
+
+/* ==============================================
+CONTAINER
+============================================== */
+.flash {
+  padding: 20px 0;
+
+  > .container {
+    padding: 0;
+  }
+
+  &--notice {
+    background-color: $color-link;
+    color: white;
+  }
+
+  &--error {
+    background-color: $color-error;
+    color: white;
+  }
+
+  &--error-list {
+    background-color: $color-error;
+    color: white;
+  }
+}
 /* ============================================== */
 
 

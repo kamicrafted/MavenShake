@@ -36,9 +36,11 @@ HOMEPAGE
     }
   }
 
-  .container {
-    padding-top: 0;
-    padding-bottom: 0;
+  #main {
+    > .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 }
   

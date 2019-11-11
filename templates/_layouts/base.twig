@@ -52,8 +52,8 @@
     {% set flashNotice = craft.app.session.getFlash('notice') %}
 
     {% if flashNotice %}
-      <div class="bg-blue text-white">
-        <div class="container mx-auto px-6 py-4">
+      <div class="flash flash--notice">
+        <div class="container mx-auto">
           {{ flashNotice }}
         </div>
       </div>
@@ -62,16 +62,16 @@
     {% set flashError = craft.app.session.getFlash('error') %}
 
     {% if flashError %}
-      <div class="bg-red text-white">
-        <div class="container mx-auto px-6 py-4">
+      <div class="flash flash--error">
+        <div class="container mx-auto">
           {{ flashError }}
         </div>
       </div>
     {% endif %}
 
     {% if cart.errors|length %}
-      <div class="bg-red text-white">
-        <div class="container mx-auto px-6 py-4">
+      <div class="flash flash--error-list bg-red text-white">
+        <div class="container mx-auto">
           {% for attribute, errors in cart.errors %}
             {% if loop.first %}
               <ul>
@@ -148,6 +148,9 @@
           
     doPoll();
     {% endjs %}
+
+    {% block footscripts %}
+    {% endblock %}
 
     {% block vue %}
     {% endblock %}

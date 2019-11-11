@@ -1,12 +1,17 @@
+{% extends "_layouts/base" %}
+{# {% extends 'shop/_layouts/checkout' %} #}
+{% block body_class %}view-checkout-account{% endblock %}
+
+{% block sitemeta %}
+<title>{{ "MavenShake - No-nonsense Nutrition"|t }}</title>
+<meta name="description" content="{{ "The example templates for Craft Commerce"|t }}">
+{% endblock %}
+
 {% if currentUser %}
     {% redirect 'shop/checkout/addresses' %}
 {% endif %}
 
-{% extends 'shop/_layouts/checkout' %}
-
-{% block body_class %}view-checkout-account{% endblock %}
-
-{% block content %}
+{% block main %}
 
     {% if not cart.email %}
         {% redirect 'shop/checkout' %}
@@ -25,7 +30,7 @@
     <div class="flex -mx-8 mt-6 pt-8">
         <div class="w-1/2 px-8 border-r border-grey-lighter">
             {% if userExists %}
-            <h2 class="mt-0">Sign In</h2>
+            <h3 class="mt-0">Sign In</h3>
 
             <form method="post" accept-charset="UTF-8">
                 {{ csrfInput() }}
@@ -51,13 +56,13 @@
                 </div>
 
                 <div class="buttons">
-                    <input type="submit" value="Login" class="button button-primary"/>
+                    <input type="submit" value="Login" class="button button--primary"/>
                 </div>
             </form>
 
             <p><a href="{{ url('forgotpassword') }}">Forgot your password?</a></p>
             {% else %}
-            <h2 class="mt-0">Register</h2>
+            <h3 class="mt-0">Register</h3>
 
             <form method="post" accept-charset="UTF-8">
                 {{ csrfInput() }}
@@ -107,7 +112,7 @@
                 </div>
 
                 <div class="buttons">
-                    <input type="submit" value="Register" class="button button-primary"/>
+                    <input type="submit" value="Register" class="button button--primary"/>
                 </div>
             </form>
 
@@ -115,7 +120,7 @@
             {% endif %}
         </div>
         <div class="w-1/2 px-8">
-            <h2 class="mt-0">Checkout</h2>
+            <h3 class="mt-0">Checkout</h3>
             <a href="{{ url('shop/checkout/addresses')}}">Or, just continue as guest &rarr;</a>
         </div>
     </div>
