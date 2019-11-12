@@ -1,0 +1,20 @@
+.view-legal {
+  #main {
+    max-width: 800px;
+    padding: 40px;
+    margin-bottom: 50px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px -5px rgba(black, .25);
+  }
+
+  ol {
+    list-style: decimal;
+    margin-left: 20px;
+  }
+
+  ol ol {
+    list-style: lower-alpha;
+    margin-left: 40px;
+  }
+}

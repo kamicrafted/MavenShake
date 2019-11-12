@@ -83,18 +83,18 @@
 
 {% js %}
 $(document).ready(function(){
-    $('input[type="file"]').change(function(e){
-        // var files = e.target.files[0].name;
-        var files = e.target.files;
+  $('input[type="file"]').change(function(e){
+      // var files = e.target.files[0].name;
+      var files = e.target.files;
 
-        $('.files').html("");
-        $.each(files, function(index, value) {  
-          if (index < files.length - 1) {
-            $('.files').append(files[index].name + ", ");
-          } else {
-            $('.files').append(files[index].name + "");
-          }          
-        })
-    });
+      $('.files').html("");
+      $.each(files, function(index, value) {  
+        if (index < files.length - 1) {
+          $('.files').append(files[index].name + ", ");
+        } else {
+          $('.files').append(files[index].name + "");
+        }          
+      })
+  });
 });
 {% endjs %}
