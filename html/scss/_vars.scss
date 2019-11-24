@@ -9,12 +9,16 @@ $color-text: #16110e;
 $color-text-light: $color-bg;
 $color-primary: #0fd284;
 $color-error: #FF2E53;
+$color-border: #cacaca;
 $color-footer: $color-text;
 $color-error-light: #ffe9ee;
+$color-meter-bar: #686868;
+$color-meter-fill: $color-primary;
+$color-meter-active-border: $color-link;
 
 $base-font-size: 18px;
-$font-headline: fatfrank, sans-serif;
-$font-body: freight-sans-pro, sans-serif;
+$font-headline: museo-sans-display, arial, sans-serif;
+$font-body: freight-sans-pro, arial, sans-serif;
 
 
 /* ==============================================

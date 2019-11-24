@@ -35,9 +35,15 @@ GLOBAL
 /* ============================================== */
 .view-checkout {
   .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     &__logo {
+      width: 180px;
+      
       img {
-        width: 150px;
+        width: 100%;
       }
     }
   }
@@ -48,56 +54,83 @@ GLOBAL
 STEPS
 ============================================== */
 .steps {
+  font-family: $font-headline;
   min-width: 600px;
 
   > ul {
     display: flex;
-    display: -webkit-flex;
     margin-bottom: 0;
     padding: 0;
 
     > li {
+      position: relative;
       display: block;
       flex: 1;
       list-style: none;
-      color: #aaa;
+      text-align: center;
+
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 50;
+        left: 50%;
+        bottom: -5px;
+        width: 5px;
+        height: 5px;
+        border-radius: 10px;
+        background-color: rgba($color-text, .3);
+      }
 
       a {
-        color: #aaa;
+        color: rgba($color-text, .3);
         text-decoration: none;
         display: inline-block;
         padding: 8px;
+        font-size: 14px;
+        text-transform: uppercase;
       }
 
-      &.done a {
-        font-size: 16px;
-        font-weight: bold;
-        color: $color-link;
+      &.done {
+        a {
+          font-weight: bold;
+          color: $color-text;
+        }
       }
 
-      &.sel a {
-        color: $color-text;
+      &.sel {
+        &:after {
+          content: '';
+          position: absolute;
+          z-index: 50;
+          left: 50%;
+          bottom: -8px;
+          width: 11px;
+          height: 11px;
+          border-radius: 10px;
+          border: 3px solid $color-link;
+          background-color: white;
+        }
+
+        a {
+          color: $color-text;
+        }
       }
     }
   }
 
   .meter {
     position: relative;
-    border: 1px solid #bbb;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    padding: 3px;
-    margin-bottom: 10px;
+    width: calc(100% - 120px);
+    margin: 0 auto;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    background-color: rgba($color-meter-bar, .2);
 
     > span {
       display: block;
-      height: 8px;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-      background-color: $color-primary;
+      height: 5px;
+      border-radius: 50px;
+      background-color: $color-meter-fill;
       position: relative;
       overflow: hidden;
     }

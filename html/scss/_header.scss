@@ -22,6 +22,47 @@ SITE HEADER
         color: $color-text;
       }
     }
+
+    ul ul > li {
+      a {
+        font-size: 14px !important;
+      }
+    }
+
+    nav > ul > li.account:hover > ul {
+      opacity: 1;
+
+      > li {
+        transition: all .15s $ease-in-out-quad;
+
+        &:first-child {
+          border-radius: 6px 6px 0 0;
+        }
+
+        &:last-child {
+          border-radius: 0 0 6px 6px;
+        }
+         
+        &:hover {
+          background-color: $color-primary; 
+
+          a {
+            color: white;
+          }
+        }
+
+        a {
+          transition: all .15s $ease-in-out-quad;
+        }
+      }
+    }
+
+    nav > ul ul {
+      opacity: 0;
+      border-radius: 6px;
+      box-shadow: 0 5px 10px rgba(black, .3), 0 3px 6px -3px rgba(black, .3);
+      transition: all .15s $ease-out-quad;
+    }
   }
 
   &__left {

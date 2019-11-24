@@ -3,15 +3,14 @@ BUTTONS
 ============================================== */
 .button {
   display: inline-block;
-  padding: 8px 30px;
+  padding: 8px 16px;
   margin-bottom: 20px;
   border: 1px solid darken($color-primary, 6%);
   border-radius: 4px;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
   font-family: $font-body;
-  letter-spacing: 1px;
   cursor: pointer;
   transition: all .1s $ease-in-out-quad;
 
@@ -24,6 +23,16 @@ BUTTONS
   &--primary {
     color: white;
     background-color: $color-primary;
+    letter-spacing: 1px;
+  }
+
+  &--secondary {
+    font-size: 16px;
+    font-weight: normal;
+    padding: 5px 15px;
+    background-color: white;
+    color: $color-text;
+    border: 1px solid #dadada;
   }
 
   &--remove {
