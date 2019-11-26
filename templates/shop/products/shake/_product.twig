@@ -38,13 +38,21 @@
         {% for purchasable in product.variants %}
           <span>{{ purchasable.title }}</span>
           <span>{{ purchasable.salePrice|commerceCurrency(cart.currency) }}</span>
+          {# <span>{{ purchasable.getPrice()|commerceCurrency(cart.currency) }}</span> #}
         {% endfor %}
       </p>
 
-      {% if currentUser.isInGroup('member') is defined %}
+      {% if currentUser and currentUser.isInGroup('member') %}
         <div class="discount-msg">
           <h3>Member Discount</h3>
-          <p>Thank you for being a Maven Center Member! Enjoy 20% off all Maven Wellness products.</p>
+          <p>Thank you for being a Maven Center Member! Enjoy 20% MavenShake.</p>
+        </div>
+      {% endif %}
+
+      {% if currentUser and currentUser.isInGroup('vip') %}
+        <div class="discount-msg">
+          <h3>VIP Discount</h3>
+          <p>Thank you for supporting us! Enjoy 40% off MavenShake.</p>
         </div>
       {% endif %}
 

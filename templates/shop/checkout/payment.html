@@ -82,7 +82,7 @@
                         </label>
                         {% endif %}
 
-                        <button class="button button-primary" type="submit">Pay {{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true) }}</button>
+                        <button class="button button--primary" type="submit">Pay {{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true) }}</button>
                     </fieldset>
                 </form>
             {% endif %}

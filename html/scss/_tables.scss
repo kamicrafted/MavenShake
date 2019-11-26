@@ -1,38 +1,23 @@
 table {
   thead {
     tr {
-      overflow: hidden;
+      border-bottom: 1px solid $color-border;
     }
     th {
-      padding: 8px 16px;
-      background-color: $color-text;
-      color: white;
-      font-size: 14px;
       font-weight: bold;
-
-      &:first-child {
-        border-radius: 4px 0 0;
-      }
-      
-      &:last-child {
-        border-radius: 0 4px 0 0;
-      }
+      font-size: 14px;
+      padding: 10px 0;
     }
   }
 
   tbody {
     tr {
-      td {
-        padding: 12px 16px;
-        border: none;
-        border-bottom: 1px solid #efefef;
-      }
+      border: none;
+    }
 
-      .cell__price {
-        > span {
-          font-size: 14px;
-          opacity: .6;
-        }
+    td {
+      &.table__spacer {
+        height: 20px;
       }
     }
   }

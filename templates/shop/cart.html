@@ -1,299 +1,397 @@
+{# {% extends "shop/_layouts/main" %} #}
 {% extends "_layouts/base" %}
-{% block body_class %}view-cart
-{% endblock %}
+
+{% block body_class %}view-cart{% endblock %}
 
 {% block sitemeta %}
-  <title>{{ "Shopping Cart - MavenShake"|t }}</title>
-  <meta name="description" content="{{ "The example templates for Craft Commerce"|t }}">
+	<title>{{ "Shopping Cart - MavenShake"|t }}</title>
+	<meta name="description" content="{{ "The example templates for Craft Commerce"|t }}">
 {% endblock %}
 
 {% block main %}
-<h1>Your cart</h1>
+  <h1 class="heading heading--page">Your cart</h1>
 
-{% if cart.lineItems|length %}
-    <div class="cart">
-      <table class="cart__items">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Details</th>
-            <th class="text-right">Price</th>
-          </tr>
-        </thead>
-        <form method="POST">
-          <input type="hidden" name="action" value="commerce/cart/update-cart">
-          {{ redirectInput('shop/cart') }}
-          {{ csrfInput() }}
-          <tbody>
-            {% set lineItemHasErrors = false %}
-            {% for item in cart.lineItems %}
-              {% set product = item.purchasable.product %}
+  {% if cart.lineItems|length %}
+    <table class="cart">
+      <form method="POST">
+        <input type="hidden" name="action" value="commerce/cart/update-cart">
+        <input type="hidden" name="cartUpdatedNotice" value="The cart was updated.">
+        {{ redirectInput('shop/cart') }}
+        {{ csrfInput() }}
 
-              {% if item.hasErrors() %}
-                {# if the line item has errors lets record it so we can hide totals later (since they wont make sense) #}
-                {% set lineItemHasErrors = true %}
-              {% endif %}
-              <tr class="item" {% if item.hasErrors() %} style="background-color:rgba(255, 0, 0, .1);" {% endif %}>
-                <td class="item__column-img">
-                  <div
-                    class="thumb">
-                    {# <img src="/images/products/{{product.productPhoto.one().filename }}" alt="{{ item.description }}" style="width: 150px;"> #}
-                    {% set image = item.purchasable.productPhoto.first().getUrl('square_md') ?? null %}
-                    {# Fallback on product image if there is no variant image set #}
-                    {% if not image|length %}
-                      {% set image = item.purchasable.product.productPhoto.first().url ?? null %}
-                    {% endif %}
-
-                    <img class="thumb__img" src="{{ image }}" alt="{{ item.description }}" style="width: 150px;">
-                  </div>
-                  {# <code>{{ item.options|json_encode }}</code> #}
-                </td>
-
-                <td valign="item__column-detail top">
-                  <div class="product__detail" style="display: flex; align-items: center; justify-content: space-between;">
-                    <div class="product__info">                      
-                      <p class="item__variant-info">
-                        <span class="item__variant-title">
-                          <strong class="item__title">{{ item.description }}</strong> - {{ item.purchasable.title }}
-                        </span> 
-                        <span class="item__variant-price">
-                          {{ item.price|commerceCurrency(cart.currency) }}
-                        </span>
-                      </p>
-                      
-                      {# <p class="item__sku" style="opacity: .6;">({{ item.sku }})</p> #}
-                    </div>
-                  </div>
-
-                  <div class="item__count">
-                    <input type="{% if item.options.donationAmount is defined %}hidden{%else%}number{%endif%}" name="lineItems[{{ item.id }}][qty]" min="0" value="{{ item.qty }}">
-                  </div>
-
-                  <span {% if item.getFirstError('qty') %} class="has-error" {% endif %}>
-                    {% if item.options.giftWrapped is defined %}
-                      <select name="lineItems[{{ item.id }}][options][giftWrapped]">
-                        <option value="no" {% if item.options.giftWrapped == 'no' %} selected {% endif %}>
-                          No gift wrap
-                        </option>
-                        <option value="yes" {% if item.options.giftWrapped == 'yes' %} selected {% endif %}>
-                          Gift wrapped.
-                        </option>
-                      </select>
-                    {% endif %}
-
-                    {% if item.options.donationAmount is defined %}
-                      <input type="text" name="lineItems[{{ item.id }}][options][donationAmount]" placeholder="Donation" value="{{item.options.donationAmount}}">
-                    {% endif %}
-
-                    {# <input type="textarea" placeholder="Add a note"
-                                    size="50"
-                                    name="lineItems[{{ item.id }}][note]"
-                                    value="{{ item.note }}"
-                                    style="height: 100px; vertical-align: top;"> #}
-
-                  {# <label>
-                      <input type="checkbox"
-                          name="lineItems[{{ item.id }}][remove]"
-                          value="1"> Remove Line
-                  </label> #}
-                  </span>
-
-                  <input
-                    class="item__note" type="textarea" placeholder="Add a note" name="lineItems[{{ item.id }}][note]" value="{{ item.note }}" cols="40" rows="8" style="width: 100%;">
-
-                </td>
-
-                <td class="item__column-price text-right">
-                  <div class="item__calculation">
-                    {% if not lineItemHasErrors %}
-                      {% if item.onSale %}
-                        {# Sale Price
-                        {{ item.salePrice|commerceCurrency(cart.currency) }}
-                        <br> #}
-                        
-                        Price:
-                        {{ item.price|commerceCurrency(cart.currency) }}
-                        <br>
-
-                        Discount:
-                        {{ item.saleAmount|commerceCurrency(cart.currency) }}
-                        <br>
-                        
-                        Subtotal:
-                        {{ item.subtotal|commerceCurrency(cart.currency) }}
-                        <br>
-                      {% else %}
-                        {# Price:
-                        {{ item.price|commerceCurrency(cart.currency) }}
-                        <br> #}
-                        <div class="item__group">
-                          <span class="item__label">Subtotal:</span>
-                          <span class="item__val">{{ item.subtotal|commerceCurrency(cart.currency) }}</span>
-                        </div>
-                      {% endif %}
-                    {% endif %}
-
-                    {% for sale in item.purchasable.sales %}
-                      {% if loop.first %}
-                        Sales Applied:
-                      {% endif %}
-                      {{ sale.name }}<br>
-                    {% endfor %}
-                  </div>
-
-                  <input class="button button--remove" type="submit" name="lineItems[{{ item.id }}][remove]" value="Remove"/>
-                </td>
-              </tr>
-              {% if not lineItemHasErrors %}
-                {% for adjustment in item.adjustments %}
-                  <tr class="adjustment">
-                    <td></td>
-                    <td>
-                      <div class="cart__coupon" style="display: flex; justify-content: space-between; font-size: 12px; padding: 10px 20px; background-color: #f0fffe; border: 1px solid #d4f0ee; border-radius: 6px;">
-                        <strong>{{ adjustment.type|apTitleize }}:
-                          {{ adjustment.name }}</strong>
-                        <span>({{ adjustment.description }})</span>
-                      </div>
-                    </td>
-                    <td class="text-right">{{ adjustment.amount|commerceCurrency(cart.currency) }}</td>
-                  </tr>
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-
-            {% if not lineItemHasErrors %}
-              {% for adjustment in cart.orderAdjustments %}
-                <tr class="adjustment">
-                  <td>{{ adjustment.type }}</td>
-                  <td>
-                    <strong>{{ adjustment.name }}</strong><br>({{ adjustment.description }}
-                    )
-                  </td>
-                  <td class="text-right">{{ adjustment.amount|commerceCurrency(cart.currency) }}</td>
-                </tr>
-              {% endfor %}
-            {% endif %}
-
-            <tr>
-              <td colspan="3" class="text-right">
-                <div class="item__total item__group">
-                  <div class="item__label">
-                    Sub total:
-                  </div>
-
-                  <div class="item__val">
-                    {{ cart.totalPrice|commerceCurrency(cart.currency) }}
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </form>
-      </table>
-
-      <table class="cart__billing">
-        <thead></thead>
         <tbody>
+          {% set lineItemHasErrors = false %}
           <tr>
-            <td colspan="2" class="text-left">
-              {% if not lineItemHasErrors %}
-                {# <strong>Built in Adjustment Totals</strong> #}
-                <div class="item__group">
-                  <div class="item__label">
-                    Sub total:
-                  </div>
-                  <div class="item__val">
-                    {{ cart.totalPrice|commerceCurrency(cart.currency) }}
-                  </div>
+            <td colspan="3">
+              <div class="cart__wrapper">
+                <div class="cart__lineitems">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th>Details</th>
+                        <th class="text-right">Price</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      {% for item in cart.lineItems %}
+                        {% if item.hasErrors() %}
+                          {# if the line item has errors lets record it so we can hide totals later (since they wont make sense) #}
+                          {% set lineItemHasErrors = true %}
+                        {% endif %}
+                        <tr class="item" {% if item.hasErrors() %}style="background-color:rgba(255, 0, 0, .1);"{% endif %}>
+                          <td>
+                            <div class="cart__thumb thumb">
+                              {# <img src="/images/products/{{product.productPhoto.one().filename }}" alt="{{ item.description }}" style="width: 150px;"> #}
+                              {% set image = item.purchasable.productPhoto.first().getUrl('sm') ?? null %}
+                              {# Fallback on product image if there is no variant image set #}
+                              {% if not image|length %}
+                                {% set image = item.purchasable.product.productPhoto.first() ?? null %}
+                              {% endif %}
+                              <img class="cart__thumb-img thumb__img" src="{{ image }}" alt="{{ item.description }}" style="width: 150px;">
+                            </div>
+                          </td>
+                          
+                          <td style="vertical-align: top;">
+                            <div class="cart__item-info">
+                              <div class="cart__item-detail">
+                                <strong>{{ item.description }} - {{ item.purchasable.title }}</strong>
+                                <p class="cart__sku">({{ item.sku }})</p>
+                                
+                                {# {% if item.options %}
+                                  <code>{{ item.options|json_encode }}</code>
+                                {% endif %} #}
+                              </div>
+
+                              <div class="cart__item-quantity {% if item.getFirstError('qty') %}has-error{% endif %}">
+                                <label for="lineItems[{{ item.id }}][qty]">x </label>
+                                <input class="cart__quantity" type="{% if item.options.donationAmount is defined %}hidden{%else%}number{%endif%}" name="lineItems[{{ item.id }}][qty]" min="0" value="{{ item.qty }}">
+                              </div>
+                            </div>
+
+                            <label class="cart__label" for="lineItems[{{ item.id }}][note]">Add a note</label>
+                            <input class="cart__note" type="text" placeholder="My Note"
+                                  size="20"
+                                  name="lineItems[{{ item.id }}][note]"
+                                  value="{{ item.note }}">
+
+                            {# {% if item.options.giftWrapped is defined %}
+                            <select name="lineItems[{{ item.id }}][options][giftWrapped]">
+                              <option value="no"
+                                {% if item.options.giftWrapped == 'no' %}selected{% endif %}>
+                                No gift wrap
+                              </option>
+                              <option value="yes"
+                                {% if item.options.giftWrapped == 'yes' %}selected{% endif %}>
+                                Gift wrapped.
+                              </option>
+                            </select>
+                            {% endif %} #}
+
+                            {# {% if item.options.donationAmount is defined %}
+                              <input type="text" name="lineItems[{{ item.id }}][options][donationAmount]" placeholder="Donation" value="{{item.options.donationAmount}}">
+                            {% endif %} #}
+
+                          </td>
+
+                          <td class="cart__price text-right"  style="vertical-align: top;">
+                            {% if not lineItemHasErrors %}
+                              {% if item.onSale %}
+                                <s>Price: {{ item.price|commerceCurrency(cart.currency) }}</s>
+                                <br>
+                                Sale Off: {{ item.saleAmount|commerceCurrency(cart.currency) }}
+                                <br>
+                                Sale Price {{ item.salePrice|commerceCurrency(cart.currency) }}
+                                <br>
+                                Sale Price Subtotal: {{ item.subtotal|commerceCurrency(cart.currency) }}
+                                <br>
+                              {% else %}
+                                Price: {{ item.price|commerceCurrency(cart.currency) }}
+                                <br>
+                                Price Subtotal: {{ item.subtotal|commerceCurrency(cart.currency) }}
+                                <br>
+                              {% endif %}
+                            {% endif %}
+
+                            {% set itemSales = item.snapshot.sales ?? [] %}
+
+                            {% for sale in itemSales %}
+                              {% if loop.first %}
+                                <span class="cart__sales-label">Sales Applied:</span>
+                              {% endif %}
+
+                              <span class="cart__sales-name">{{ sale.name }}</span>
+                            {% endfor %}
+
+                            <label class="remove-from-cart">
+                              <input type="checkbox"
+                                    name="lineItems[{{ item.id }}][remove]"
+                                    value="1"> Remove from cart
+                            </label>
+
+                            <input class="right button button--secondary" type="submit" value="Update Cart"/>
+                          </td>
+                        </tr>
+
+                        {% if not lineItemHasErrors %}
+                          {% for adjustment in item.adjustments %}
+                            <tr class="adjustment">
+                              <td></td>
+                              <td colspan="2">
+                                <div class="cart__adjustment {% if adjustment.type == 'discount' %}cart__adjustment--discount {% endif %}">
+                                  <div class="cart__adjustment-info">
+                                    <p class="cart__adjustment-name"><strong>{{ adjustment.name }}</strong></p>
+
+                                    <p class="text-sm cart__adjustment-description">{{ adjustment.description }}</p>
+                                  </div>
+
+                                  <div class="cart__adjustment-amount">
+                                    {% if adjustment.isEstimated %}
+                                      <i class="text-sm text-grey-dark">{{ 'Estimated'|t('commerce') }}</i>
+                                    {% endif %}
+
+                                    {{ adjustment.amount|commerceCurrency(cart.currency) }}
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          {% endfor %}
+                        {% endif %}
+                      {% endfor %} {# END MAIN LOOP #}
+
+                      {% if not lineItemHasErrors %}
+                        {% for adjustment in cart.orderAdjustments %}
+                          <tr><td class="table__spacer" colspan="3"></td></tr>
+                          <tr class="adjustment adjustment-order">
+                            <td>
+                              <p class="cart__adjustment-type text-sm text-grey-dark">{{ adjustment.type|capitalize }}</p>
+                            </td>
+                            <td colspan="2">
+                              <div class="cart__adjustment">
+                                <div class="cart__adjustment-info">
+                                  <p class="cart__adjustment-name"><strong>{{ adjustment.name }}</strong></p>
+
+                                  {% if adjustment.description %}
+                                    <p class="cart__adjustment-description">({{ adjustment.description }})</p>
+                                  {% endif %}
+                                </div>
+
+                                <div class="cart__adjustment-amount">
+                                  {% if adjustment.isEstimated %}
+                                    <i class="text-sm text-grey-dark">{{ 'Estimated'|t('commerce') }}</i>
+                                  {% endif %}
+
+                                  {{ adjustment.amount|commerceCurrency(cart.currency) }}
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                      {% endif %}
+
+                      {# <tr>
+                        <td colspan="3">
+                          {% include "shop/_includes/shipping-estimator" %}
+                        </td>
+                      </tr> #}
+                    </tbody>
+                  </table>
                 </div>
 
-                <hr>
-                
-                <div class="item__group">
-                  <div class="item__label">
-                    Discounts:
-                  </div>
-                  <div class="item__val">
-                    {{ cart.adjustmentsTotalByType('discount')|commerceCurrency(cart.currency) }}
-                  </div>
+                <div class="cart__overview">
+                  <table>
+                    <tr>
+                      <td colspan="3" class="text-right align-text-top">
+                        {% if not lineItemHasErrors %}
+                          <div class="cart__overview-line">
+                            <div class="cart__overview-label">
+                              Item Sub Total:
+                            </div>
+                            <div class="cart__overview-value">
+                              {{ cart.itemSubTotal|commerceCurrency(cart.currency) }}
+                            </div>
+                          </div>
+
+                          <div class="cart__overview-line-title">
+                            <strong>Adjustment Totals</strong>
+                          </div>
+
+                          <div class="cart__overview-line cart__overview-line--discount">
+                            <div class="cart__overview-label">
+                              Total Discounts:
+                            </div>
+                            <div class="cart__overview-value">
+                              {{ cart.getTotalDiscount()|commerceCurrency(cart.currency) }}
+                            </div>
+                          </div>
+
+                          <div class="cart__overview-line">
+                            <div class="cart__overview-label">
+                              Total Shipping:
+                            </div>
+                            <div class="cart__overview-value">
+                              {{ cart.getTotalShippingCost()|commerceCurrency(cart.currency) }}
+                            </div>
+                          </div>
+
+                          <div class="cart__overview-line">
+                            <div class="cart__overview-label">
+                              Total Tax:
+                            </div>
+                            <div class="cart__overview-value">
+                              {{ cart.getTotalTax()|commerceCurrency(cart.currency) }}
+                            </div>
+                          </div>
+
+                          <div class="cart__overview-line">
+                            <div class="cart__overview-label">
+                              Total Tax (inc):
+                            </div>
+                            <div class="cart__overview-value">
+                              {{ cart.getTotalTaxIncluded()|commerceCurrency(cart.currency) }}
+                            </div>
+                          </div>
+
+                          <div class="cart__overview-line">
+                            <div class="cart__overview-label">
+                              Total:
+                            </div>
+                            <div class="cart__overview-value">
+                              <h4>{{ cart.totalPrice|commerceCurrency(cart.currency) }}</h4>
+                            </div>
+                          </div>
+
+                          {% if cart.getFirstError('couponCode') %}
+                            <span class="flash">{{ cart.getFirstError('couponCode') }}</span>
+                          {% endif %}
+
+                          <span class="{% if cart.getFirstError('couponCode') %}has-error{% endif %}"></span>
+
+                          <hr>
+
+                          <div class="coupon">
+                            <input type="text" name="couponCode" width="11"
+                              class="coupon-code {% if cart.getFirstError('couponCode') %}has-error{% endif %}"
+                              value="{{ cart.couponCode }}"
+                              placeholder="{{ "Coupon Code"|t }}">
+
+                            <div class="text-right">
+                              <input class="right button button--secondary" type="submit" value="Apply"/>
+                            </div>
+                          </div>
+
+                          <a class="button button--primary" href="{{ url('shop/checkout') }}">Checkout</a>
+                        {% endif %}
+                      </td>
+                    </tr>
+                  </table>
                 </div>
-
-                <div class="item__group">
-                  <div class="item__label">
-                    Shipping:
-                  </div>
-                  
-                  <div class="item__val">
-                    {{ cart.adjustmentsTotalByType('shipping')|commerceCurrency(cart.currency) }}
-                  </div>
-                </div>
-                
-                {% if not cart.adjustmentsTotalByType('tax') %}
-                  <div class="item__group billing__taxes">
-                    <div class="item__label">
-                      Taxes:
-                    </div>
-                    
-                    <div class="item__val">
-                      {{ cart.adjustmentsTotalByType('tax')|commerceCurrency(cart.currency) }}
-                    </div>
-                  </div>
-
-                  <div class="item__group">
-                    <div class="item__label">
-                      Total Tax (inc):
-                    </div>
-                    
-                    <div class="item__val">
-                      {{ cart.adjustmentsTotalByType('tax', true)|commerceCurrency(cart.currency) }}
-                    </div>
-                  </div>
-                {% endif %}
-
-                <hr>
-
-                <div class="item__group billing__total">
-                  <div class="item__label">
-                    <h4>Total</h4>
-                  </div>
-                  
-                  <div class="item__val">
-                    <h4>{{ cart.totalPrice|commerceCurrency(cart.currency) }}</h4>
-                  </div>
-                </div>
-              {% endif %}
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              {# Update Coupon form uses the single update controller action: #}
-              {% if cart.getFirstError('couponCode') %}
-                <span class="flash">{{ cart.getFirstError('couponCode') }}</span>
-              {% endif %}
-
-              <div class="item__group">
-                <div class="{% if cart.getFirstError('couponCode') %}has-error{% endif %}">
-                  <input type="text" name="couponCode" width="11" class="{% if cart.getFirstError('couponCode') %}has-error{% endif %}" value="{{ cart.couponCode }}" placeholder="{{ "Coupon Code"|t }}">
-                </div>
-
-                <input class="button button--update" type="submit" value="Update Cart"/>
               </div>
             </td>
           </tr>
-          <tr>
-            <td colspan="3" class="text-right">
-              {% if not lineItemHasErrors %}
-                <a class="button button--primary" href="{{ url('shop/checkout') }}">Checkout</a>
-              {% endif %}
-            </td>
-          </tr>
         </tbody>
-      </table>
-    </div>
+      </form>
+    </table>
   {% endif %}
 
   {% if not cart.lineItems|length %}
-    <p>You have no items in your cart, add some on the
-      <a href="{{ url('shop/products') }}">products page</a>.</p>
+    <p>Your cart is empty. <a href="{{ url('shop/products/mavenshake') }}">Shop MavenShake</a>.</p>
   {% endif %}
+
+
+
+
+	{# {% js %}
+	  var states = {{ craft.commerce.states.allStatesAsList|json_encode|raw }};
+	{% endjs %}
+  
+	{% js %}
+	  var $estimateShippingMethodsContainer = $('.estimate-shipping-methods');
+    var $estimateFieldsContainer = $('.estimate-fields');
+    var $estimateShowFieldsButton = $('.estimate-show-fields');
+    var $estimateBilling = $('.estimate-billing');
+    var $estimateBillingSameAsShipping = $('input[name="estimatedBillingAddressSameAsShipping"]');
+    var $estimateCountrySelects = $('select.estimate-country');
+
+    // Setup "same as" checkbox
+    if ($estimateBillingSameAsShipping.prop('checked')) {
+        $estimateBilling.addClass('hidden').find('input,select').attr('disabled', 'disabled').prop('disabled', 'disabled');
+    }
+
+    // Handle the change event for the "same as" checkbox
+    $estimateBillingSameAsShipping.change(function(ev) {
+      var $this = $(this);
+      if ($this.prop('checked')) {
+          $estimateBilling.addClass('hidden').find('input,select').attr('disabled', 'disabled').prop('disabled', 'disabled');
+      } else {
+          $estimateBilling.removeClass('hidden').find('input,select').attr('disabled', '').prop('disabled', '');
+      }
+    });
+
+    // Setup initial state Showing/hiding of the shipping method selection
+    if ($estimateShippingMethodsContainer.find('.shipping-select').length) {
+      $estimateFieldsContainer.addClass('hidden');
+      $estimateFieldsContainer.find('input,select').attr('disabled', 'disabled').prop('disabled', 'disabled');
+    } else {
+      $estimateShippingMethodsContainer.addClass('hidden');
+      $estimateShippingMethodsContainer.find('input,select').attr('disabled', 'disabled').prop('disabled', 'disabled');;
+    }
+
+    // Handle click event for returning to the estimate fields
+    $estimateShowFieldsButton.click(function(ev) {
+      ev.preventDefault();
+
+      if ($estimateFieldsContainer.hasClass('hidden')) {
+        $estimateFieldsContainer.removeClass('hidden');
+        $estimateFieldsContainer.find('input,select').attr('disabled', '').prop('disabled', '');
+        $estimateShippingMethodsContainer.addClass('hidden');
+        $estimateShippingMethodsContainer.find('input,select').attr('disabled', 'disabled').prop('disabled', 'disabled');
+      } else {
+        $estimateFieldsContainer.addClass('hidden');
+        $estimateFieldsContainer.find('input,select').attr('disabled', 'disabled').prop('disabled', 'disabled');
+        $estimateShippingMethodsContainer.removeClass('hidden');
+        $estimateShippingMethodsContainer.find('input,select').attr('disabled', '').prop('disabled', '');
+      }
+    });
+
+    // Handle change event for country selection for both shipping and billing
+    $estimateCountrySelects.change(function () {
+      // get the value of the selected country.
+      var cid = $(this).val();
+      var $box = $('.estimate-state-box[data-modelname="'+$(this).data('modelname')+'"]');
+      var $states = $box.find('select.address-stateId');
+      var $stateName = $box.find('input.address-stateName');
+      $states.find('option').remove();
+
+      if (states.hasOwnProperty(cid))
+      {
+        // We have states for this country, show the states drop down.
+        $states.removeClass('hidden');
+        $states.attr('name', $states.data('modelname')+'[stateValue]');
+
+        // We have states for this country, hide the stateName input.
+        $stateName.removeAttr('name');
+        $stateName.addClass('hidden');
+        $stateName.val('');
+
+        // Add all states as options to drop down.
+        for (var id in states[cid])
+        {
+          var state = states[cid][id];
+          var $option = $('<option/>');
+          $option.attr('value', id).text(state);
+          $states.append($option);
+        }
+      }else{
+        // hide the states dropdown, since this country has none.
+        $states.addClass('hidden');
+        $states.removeAttr('name');
+
+        // show the stateName
+        $stateName.removeClass('hidden');
+        $stateName.attr('name', $stateName.data('modelname')+'[stateValue]');
+      }
+    });
+	{% endjs %} #}
 {% endblock %}
