@@ -7,9 +7,13 @@
 {% endblock %}
 
 {% block body %}
-<div id="main" class="container mx-auto p-6">
+<div class="pattern-mask">
+  <div class="pattern"></div>
+</div>
+
+<div id="main" class="main-home container mx-auto p-6">
   <div class="message-main">
-    <h1 class="headline">{{ entry.headline }}</h1>
+    <h1 class="heading">{{ entry.headline }}</h1>
     <p class="subhead">
       {{ entry.subhead }}
     </p>
@@ -22,27 +26,41 @@
   </div>
 
   <div class="product-info">
+    <div class="highlights">
+      <div class="highlight highlight--left highlight--left1">Fluff isn't our thing, so no artifical fillers or sweetners. Ever.</div>
+      <div class="highlight highlight--left highlight--left2">Plenty of protein if swole is your fitness goal. (14g/serving)</div>
+      <div class="highlight highlight--left highlight--left3">All the vitamin C you need for the day in a single MavenShake serving!</div>
+
+      <div class="highlight highlight--right highlight--right1">Carnivore, herbivore, omnivore, or any-other-vore friendly.</div>
+      <div class="highlight highlight--right highlight--right2">Enough dietary fibers to keep your bowels humming (4g)</div>
+      <div class="highlight highlight--right highlight--right3">Can't tolerate lactose or gluten? Neither can we.</div>
+    </div>
     {% for asset in entry.keyart %}
-      <img src="{{ asset.getUrl('keyart') }}" alt="{{ asset.title }}">                               
+      <img src="{{ asset.getUrl('w1000') }}" alt="{{ asset.title }}">                               
     {% endfor %}
     {# <img src="images/homepage-product.png" alt=""> #}
   </div>
 </div>
 
-<div class="section section--badges">
-  <h4 class="hashtag">#MAVENSHAKE</h4>
+<div class="mask">
+  <div class="section section--badges">
+    <h4 class="hashtag">#MAVENSHAKE</h4>
 
-  <div class="badges">
-    <img class="badges__item" src="/images/icons/badge-vegan.svg" alt="">
-    <img class="badges__item" src="/images/icons/badge-gluten.svg" alt="">
-    <img class="badges__item" src="/images/icons/badge-dairy.svg" alt="">
-    <img class="badges__item" src="/images/icons/badge-sugar.svg" alt="">
+    <div class="badges">
+      <img class="badges__item" src="/images/icons/badge-vegan.svg" alt="">
+      <img class="badges__item" src="/images/icons/badge-gluten.svg" alt="">
+      <img class="badges__item" src="/images/icons/badge-dairy.svg" alt="">
+      <img class="badges__item" src="/images/icons/badge-sugar.svg" alt="">
+    </div>
   </div>
 </div>
 
 {% for block in entry.highlights.all() %}
   {% if block.type == "contentSection" %}
-    <div class="section section--{{ block.layout }}" style="background-color: {{ block.bgColor }}">
+    <div class="section section__highlight section--{{ block.layout }} {{ block.class }}" 
+        style="background-color: {{ block.bgColor }}; 
+        background-image: url();"
+        >
       <div class="container">
         <div class="section__message">
           <h2 class="section__title">{{ block.headline }}</h2>

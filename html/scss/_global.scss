@@ -20,6 +20,10 @@ body {
   padding-top: 0;
 }
 
+p {
+  line-height: 1.4;
+}
+
 a {
   color: $color-link;
 }
@@ -47,9 +51,29 @@ h6 {
   line-height: 1;
   text-transform: uppercase;
   font-family: $font-headline;
+  font-size: 64px;
 
   &--page {  
-    font-size: 48px;
+    font-size: 42px;
+  }
+
+  &--section {
+    font-family: $font-body;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+/* ==============================================
+RESPONSIVE - MOBILE
+============================================== */
+@media (max-width: $mq-md) {
+  .heading {
+    text-align: center;
+
+    &--page {  
+      font-size: 40px;
+    }
   }
 }
 
@@ -86,7 +110,12 @@ CONTAINER
 CONTAINER
 ============================================== */
 .flash {
-  padding: 20px 0;
+  padding: 10px 0;
+  
+  &:last-child,
+  &:only-child {
+    margin-bottom: 25px;
+  }
 
   > .container {
     padding: 0;
@@ -103,9 +132,16 @@ CONTAINER
   }
 
   &--error-list {
-    background-color: $color-error;
+    background-color: rgba($color-error, .8);
     color: white;
   }
+}
+
+.text-red { // inline error messages
+  display: block;
+  color: $color-error;
+  font-size: 15px;
+  // margin-bottom: 25px;
 }
 /* ============================================== */
 
@@ -148,7 +184,15 @@ PAGE MAIN MESSAGE
 
 
 
-
+/* ==============================================
+RESPONSIVE - MOBILE & TABLET
+============================================== */
+@media (max-width: $mq-lg) {
+  .flash {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 
 /* ==============================================

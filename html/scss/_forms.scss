@@ -1,0 +1,93 @@
+/* ==============================================
+FORM INPUTS
+============================================== */
+label {
+  font-weight: bold;
+  margin: 15px 0 5px;
+  font-size: .9em;
+}
+
+input {
+  &[type="text"],
+  &[type="email"],
+  &[type="[password]"],
+  &[type="number"],
+  &[type="file"] {
+    padding: 10px;
+    background: white;
+    border: 1px solid #D7D7D7;
+    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+    border-radius: 4px;
+  }
+
+  &[type="email"],
+  &[type="password"],
+  &[type="text"] {
+    width: 100%;
+  }
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  box-shadow: inset 0 1px 3px rgba(black, .2);
+  border: 1px solid rgba(black, .2);
+  border-radius: 2px;
+}
+
+input,
+textarea {
+  transition: all .15s $ease-in-out-quart;
+  &:focus {
+    outline: 0;
+    box-shadow: inset 0 1px 3px rgba(black, .2), 0 0 0 3px rgba($color-link, .5);
+  }
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  width: 100%;
+  padding: 20px 50px;
+  margin: 0 0 1em 0;
+  text-align: center;
+  font-size: .8em;
+  font-weight: 500;
+  color: white;
+  background-color: white;
+  border: 1px dashed #c0c0c0;
+  border-radius: 4px;
+  color: $color-text;
+  display: inline-block;
+  transition: all .15s $ease-in-out-quart;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  border : 1px dashed $color-link;
+  background-color: lighten($color-link, 40%);
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+	pointer-events: none;
+}
+
+.label--floating {
+  margin-top: 5px;
+}

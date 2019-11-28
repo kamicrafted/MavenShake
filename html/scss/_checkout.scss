@@ -1,43 +1,12 @@
-/* ==============================================
-VARIABLES
-============================================== */
-// $color-bg: #f0f0f0;
-// $color-link: #2E83E1;
-// $color-text: #16110E;
-// $color-primary: #0FD284;
-
-// $base-font-size: 16px;
-// $font-headline: fatfrank, sans-serif;
-// $font-body: ff-tisa-sans-web-pro, sans-serif;
-/* ============================================== */
-
-/* ==============================================
-GLOBAL
-============================================== */
-// body {
-//   background-color: $color-bg;
-//   background-image: radial-gradient(
-//     circle at top center,
-//     rgba(white, .5),
-//     $color-bg
-//   );
-//   font-family: $font-body;
-//   font-size: $base-font-size;
-// }
-
-// a {
-//   color: $color-link;
-// }
-
-// h1, h2, h3, h4, h5, h6 {
-//   font-family: $font-headline;
-// }
-/* ============================================== */
 .view-checkout {
+  background: white;
+
   .site-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid rgba($color-border, .5);
 
     &__logo {
       width: 180px;
@@ -48,8 +17,123 @@ GLOBAL
     }
   }
 
+  /* --------------------------------------
+  shop/checkout
+  -------------------------------------- */
+  .checkemail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__form {
+      max-width: 500px;
+    }
+
+    &__keyart {
+      position: relative;
+      z-index: -1;
+      height: calc(100vh - 300px);
+      width: 50%;
+      
+      img {
+        position: absolute;
+        top: calc(50% + 100px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        max-width: 500px;
+        width: 100%;
+      }
+    }
+
+    &__helper {
+      font-size: 16px;
+    }
+  }
+
   .paymentSource-form input {
     width: auto;
+  }
+}
+
+
+/* ==============================================
+LOGIN/REGISTER
+============================================== */
+.view-checkout-account {
+  .heading {
+    margin-top: 25px;
+  }
+
+  .container--main {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      width: 50vw;
+      height: 100vh;
+      background-color: rgba($color-text, .05);
+    }
+  }
+
+  .account {
+    &__form {
+      display: flex;
+    }
+
+    &__signin {
+      width: 50%;
+      padding-right: 50px;
+
+      .forgot-link {
+        font-size: 16px;
+      }
+
+      .remember {
+        font-size: 16px;
+        font-weight: normal;
+      }
+
+      .field--separate {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &__checkout {
+      width: 50%;
+      padding-left: 50px;
+    }
+
+    &__checkout-description {
+      font-size: 18px;
+    }
+
+    &__checkout-list {
+      margin-bottom: 25px; 
+
+      > li {
+        position: relative;
+        padding-left: 16px;
+        margin-bottom: 10px;
+        font-size: 16px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 9px;
+          width: 6px;
+          height: 6px;
+          background-color: $color-primary;
+          border-radius: 6px;
+        }
+      }
+    }
   }
 }
 
@@ -141,24 +225,92 @@ STEPS
   }
 }
 
-// .steps ul li.done {
-//   color: #da5a17;
-//   opacity: 0.5;
-// }
-// .steps ul li.done a {
-//   color: #da5a17;
-// }
 
-// @media (max-width: 750px) {
-//   .steps ul {
-//     display: block;
-//     margin-left: 24px;
-//   }
-//   .steps ul li {
-//     list-style: decimal;
-//     display: list-item;
-//   }
-//   .steps .meter {
-//     display: none;
-//   }
-// }
+/* ==============================================
+RESPONSIVE - MOBILE & TABLET
+============================================== */
+@media (max-width: $mq-lg) {
+  .view-checkout-email {
+    .container--main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .checkemail {
+    flex-direction: column;
+
+    &__keyart {
+      display: none;
+      width: 100% !important;
+      height: auto !important;
+      margin-bottom: -200px;
+      text-align: center;
+
+      img {
+        position: static !important;
+        transform: none !important; 
+        top: auto !important;
+        left: auto !important;
+        width: 370px !important;
+      }
+    }
+  }
+}
+
+
+
+/* ==============================================
+RESPONSIVE - MOBILE
+============================================== */
+@media (max-width: $mq-md) {
+  .view-checkout {
+    .site-header {
+      flex-direction: column;
+      height: 130px;
+
+      &__logo {
+        left: 0;
+      }
+
+      .steps {
+        width: 100%;
+        min-width: 0;
+
+        ul>li a {
+          font-size: 13px;
+        }
+      }
+
+      .meter {
+        width: calc(100% - 80px);
+      }
+    }
+  }
+
+
+  .view-checkout-account {
+    .container--main {
+      &:after {
+        display: none;
+      }
+    }
+
+    .account {
+      &__form {
+        flex-direction: column;
+      }
+
+      &__signin {
+        width: 100%;
+        padding: 20px;
+      }
+
+      &__checkout {
+        width: 100%;
+        padding: 20px;
+      }
+    }
+  }
+}

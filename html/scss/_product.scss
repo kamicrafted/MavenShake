@@ -7,7 +7,7 @@ PRODUCT DETAIL
 
 .success {
   position: fixed;
-  width: 600px;
+  max-width: 600px;
   left: 50%;
   top: 80px;
   padding: 10px 20px;
@@ -249,10 +249,6 @@ RESPONSIVE - MOBILE
       border-radius: 6px;
       border-top: 1px solid rgba(white, .75);
       box-shadow: 0 20px 20px -5px rgba(black, .15);
-
-      h1 {
-        text-align: center;
-      }
     }
 
     hr {

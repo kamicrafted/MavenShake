@@ -4,36 +4,40 @@
 
 {% extends 'shop/_layouts/checkout' %}
 
-{% block body_class %}view-checkout{% endblock %}
+{% block body_class %}view-checkout view-checkout-email{% endblock %}
 
 {% block content %}
-    <h1>What's your email address?</h1>
-    <div class="flex -mx-8 mt-6">
-        <div class="w-1/2 px-8 border-r border-grey-lighter">
-            <form method="POST">
-                <input type="hidden" name="action" value="commerce/cart/update-cart">
-                {{ redirectInput('shop/checkout/register-signin') }}
-                {{ csrfInput() }}
+  <div class="checkemail">
+    <form class="checkemail__form" method="POST">
+      <h1 class="heading heading--page">What's your email?</h1>
 
-                <div class="field">
-                    <label for="email">Email</label>
-                    <input id="email" class="w-full" type="text" value="{{ cart.email }}" name="email"
-                           placeholder="email@website.com"/> 
-                </div>
+      <input type="hidden" name="action" value="commerce/cart/update-cart">
 
-                {% set emailErrors = cart.getErrors('email') %}
-                {% if emailErrors|length %}
-                <span class="text-red">{{ emailErrors|join }}</span><br>
-                {% endif %}
+      {{ redirectInput('shop/checkout/register-signin') }}
+      {{ csrfInput() }}
 
-                <div class="buttons">
-                    <input type="submit" value="Continue" class="button button--primary"/>
-                </div>
-            </form>
-        </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" class="w-full" type="text" value="{{ cart.email }}" name="email"
+                placeholder="email@website.com"/> 
+      </div>
 
-        <div class="w-1/2 px-8">
+      {% set emailErrors = cart.getErrors('email') %}
+      {% if emailErrors|length %}
+        <span class="text-red">{{ emailErrors|join }}</span><br>
+      {% endif %}
 
-        </div>
+      <p class="checkemail__helper">
+        We’ll look up your email address to see if you already have an account. If you don't, you can choose to register or checkout as a guest in the next step.
+      </p>
+
+      <div class="buttons">
+        <input type="submit" value="Continue" class="button button--primary"/>
+      </div>
+    </form>
+
+    <div class="checkemail__keyart">
+      <img src="/images/keyart/keyart-login.jpg" alt="">
     </div>
+  </div>
 {% endblock %}

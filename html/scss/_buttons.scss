@@ -3,12 +3,13 @@ BUTTONS
 ============================================== */
 .button {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 8px 12px;
   margin-bottom: 20px;
   border: 1px solid darken($color-primary, 6%);
   border-radius: 4px;
   font-size: 18px;
   font-weight: 600;
+  text-align: center;
   text-decoration: none;
   font-family: $font-body;
   cursor: pointer;
@@ -24,11 +25,13 @@ BUTTONS
     color: white;
     background-color: $color-primary;
     letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 500;
   }
 
   &--secondary {
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 500;
     padding: 5px 15px;
     background-color: #fafafa;
     color: $color-text;

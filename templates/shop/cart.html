@@ -124,13 +124,15 @@
                               <span class="cart__sales-name">{{ sale.name }}</span>
                             {% endfor %}
 
-                            <label class="remove-from-cart">
-                              <input type="checkbox"
-                                    name="lineItems[{{ item.id }}][remove]"
-                                    value="1"> Remove from cart
-                            </label>
+                            <div class="cart__actions">
+                              <label class="remove-from-cart">
+                                <input type="checkbox"
+                                      name="lineItems[{{ item.id }}][remove]"
+                                      value="1"> Remove from cart
+                              </label>
 
-                            <input class="right button button--secondary" type="submit" value="Update Cart"/>
+                              <input class="right button button--secondary" type="submit" value="Update Cart"/>
+                            </div>
                           </td>
                         </tr>
 

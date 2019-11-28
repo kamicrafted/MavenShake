@@ -89,7 +89,7 @@
     {% endif %}
 
     {% block body %}
-      <div id="main" class="container mx-auto p-6">
+      <div id="main" class="container container--main mx-auto p-6">
         {% block main %}
           <h1>Default Content</h1>
           <p>You should not see this.</p>
@@ -146,7 +146,7 @@
       });
     }
           
-    doPoll();
+    // doPoll();
     {% endjs %}
 
     {% block footscripts %}
