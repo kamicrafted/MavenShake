@@ -50,52 +50,56 @@
       {% include '/_includes/header' %}
     {% endblock %}
 
-    {% set flashNotice = craft.app.session.getFlash('notice') %}
-
-    {% if flashNotice %}
-      <div class="flash flash--notice">
-        <div class="container mx-auto">
-          {{ flashNotice }}
-        </div>
-      </div>
-    {% endif %}
-
-    {% set flashError = craft.app.session.getFlash('error') %}
-
-    {% if flashError %}
-      <div class="flash flash--error">
-        <div class="container mx-auto">
-          {{ flashError }}
-        </div>
-      </div>
-    {% endif %}
-
-    {% if cart.errors|length %}
-      <div class="flash flash--error-list bg-red text-white">
-        <div class="container mx-auto">
-          {% for attribute, errors in cart.errors %}
-            {% if loop.first %}
-              <ul>
-              {% endif %}
-              {% for key, error in errors %}
-                <li>{{ attribute }}:
-                  {{ error }}</li>
-              {% endfor %}
-              {% if loop.last %}
-              </ul>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
 
     {% block body %}
-      <div id="main" class="container container--main mx-auto p-6">
-        {% block main %}
-          <h1>Default Content</h1>
-          <p>You should not see this.</p>
-        {% endblock %}
-      </div>
+    <div class="flash-wrapper">
+      {% set flashNotice = craft.app.session.getFlash('notice') %}
+
+      {% if flashNotice %}
+        <div class="flash flash--notice">
+          <div class="container mx-auto">
+            {{ flashNotice }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% set flashError = craft.app.session.getFlash('error') %}
+
+      {% if flashError %}
+        <div class="flash flash--error">
+          <div class="container mx-auto">
+            {{ flashError }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if cart.errors|length %}
+        <div class="flash flash--error-list bg-red text-white">
+          <div class="container mx-auto">
+            {% for attribute, errors in cart.errors %}
+              {% if loop.first %}
+                <ul>
+                {% endif %}
+                {% for key, error in errors %}
+                  <li>{{ attribute }}:
+                    {{ error }}</li>
+                {% endfor %}
+                {% if loop.last %}
+                </ul>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    
+    <div id="main" class="container container--main mx-auto p-6">
+      {% block main %}
+        <h1>Default Content</h1>
+        <p>You should not see this.</p>
+      {% endblock %}
+    </div>
+    
     {% endblock %}
 
 

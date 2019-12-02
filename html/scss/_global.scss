@@ -69,6 +69,10 @@ h6 {
   }
 }
 
+#main {
+  padding-top: 80px;
+}
+
 /* ==============================================
 RESPONSIVE - MOBILE
 ============================================== */
@@ -119,6 +123,10 @@ CONTAINER
   &:only-child {
     margin-bottom: 25px;
   }
+}
+
+.flash-wrapper {
+  margin-top: 100px;
 }
 
 .flash {

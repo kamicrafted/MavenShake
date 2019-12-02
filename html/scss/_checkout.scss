@@ -406,10 +406,31 @@ CHECKOUT/ADDRESSES
   }
 }
 
+
+/* ==============================================
+CHECKOUT/SHIPPING
+============================================== */
 .view-checkout-shipping {
   .shipping {
     &__details {
       margin-right: 75px;
+
+      .address-data {
+        &__attn,
+        &__title,
+        &__taxid,
+        &__phone
+        &__phone2 {
+          display: none;
+        }
+  
+        &__address1,
+        &__zip,
+        &__country,
+        &__state {
+          display: inline; 
+        }
+      }
     }
 
     &__overview {

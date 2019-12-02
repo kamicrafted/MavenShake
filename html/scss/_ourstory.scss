@@ -1,0 +1,51 @@
+.view-ourstory {
+  .heading {
+    font-size: 28px;
+  }
+
+  .story {
+    &__wrapper {
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      align-items: center;
+      margin: 50px 0;
+    }
+
+    &__keyart {
+      position: relative;
+      width: 500px;
+      margin-right: 75px;
+      border: 10px solid white;
+      box-shadow: 0 10px 20px rgba(0,0,0,.2), 0 10px 10px -5px rgba(0,0,0,.2), 0 50px 20px rgba(0,0,0,.2);
+      transform: rotate(-1.5deg);
+
+      img {
+        display: block;
+      }
+
+      .caption {
+        position: absolute;
+        background-color: white;
+        padding: 5px 10px;
+        font-family: $font-headline;
+        font-size: 12px;
+        letter-spacing: .4px;
+        bottom: 20px;
+        right: -30px;
+        transform: rotate(3deg);
+        box-shadow: 0 5px 5px rgba(0,0,0,.2);
+      }
+    }
+  }
+
+  .description {
+    max-width: 625px;
+    margin: 0 auto;
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+}

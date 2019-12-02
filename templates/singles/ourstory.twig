@@ -8,13 +8,29 @@
 
 {% block body %}
 <div id="main" class="container mx-auto p-6">
-  <div class="message-main">
-    <h1 class="headline">{{ entry.headline }}</h1>
-    <p class="subhead">
-      {{ entry.subhead }}
-    </p>
-  </div>
+  <div class="story__wrapper">
+    <div class="story__keyart">
+      {% for asset in entry.keyart %}
+        <img src="{{ asset.getUrl('w1000') }}" alt="{{ asset.title }}">                               
+      {% endfor %}
 
-  
+      <figure class="caption">
+        Taylor Lee, PT, DPT.
+      </figure>
+    </div>
+    
+    <div class="story__content">
+      <div class="message-main">
+        <h1 class="heading heading--section">{{ entry.headline }}</h1>
+        <p class="subhead">
+          {{ entry.subhead }}
+        </p>
+      </div>
+
+      <div class="description">
+        {{ entry.description }}
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

@@ -1,4 +1,4 @@
-<header id="header" class="site-header">
+<header id="header" class="site-header" :class="{'site-header--scroll': showCompact}">
   {% if showNav %}
     <div class="menu-button" @click="toggleMenu">
       <i class="icon icon-menu" data-feather="menu"></i>
@@ -35,13 +35,36 @@
     el: '#header',
     delimiters: ['${', '}'],
     data: {
-      showMenu: false
+      showMenu: false,
+      showCompact: false,
+      lastScrollPosition: 0
     },
     methods: {
       toggleMenu () {
         this.showMenu = !this.showMenu;
         console.log(this.showMenu);
+      },
+
+      onScroll () {
+        // Get the current scroll position
+        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+
+        // Because of momentum scrolling on mobiles, we shouldn't continue if it is less than zero
+        if (currentScrollPosition < 0) {
+          return
+        }
+        // Here we determine whether we need to show or hide the navbar
+        this.showCompact = currentScrollPosition > 50
+
+        // Set the current scroll position as the last scroll position
+        this.lastScrollPosition = currentScrollPosition
       }
+    },
+    mounted () {
+      window.addEventListener('scroll', this.onScroll)
+    },
+    beforeDestroy () {
+      window.removeEventListener('scroll', this.onScroll)
     }
   })
 {% endjs %}
