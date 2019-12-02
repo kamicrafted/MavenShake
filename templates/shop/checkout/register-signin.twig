@@ -29,7 +29,7 @@
   <div class="account__form">
     <div class="account__signin">
       {% if userExists %}
-        <h3 class="heading--section mt-0">Sign In</h3>
+        <h3 class="heading heading--section mt-0">Sign In</h3>
 
         <form method="post" accept-charset="UTF-8">
           {{ csrfInput() }}
@@ -62,7 +62,7 @@
           </div>
         </form>
       {% else %}
-        <h3 class="heading--section mt-0">Register</h3>
+        <h3 class="heading heading--section mt-0">Register</h3>
 
         <form method="post" accept-charset="UTF-8">
           {{ csrfInput() }}
@@ -120,7 +120,7 @@
     </div>
 
     <div class="account__checkout">
-      <h3 class="heading--section mt-0">Guest Checkout</h3>
+      <h3 class="heading heading--section mt-0">Guest Checkout</h3>
 
       <p class="account__checkout-description">
         In a rush to checkout? You can do so as a guest, but registering for an account allows you to:

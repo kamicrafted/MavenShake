@@ -53,6 +53,11 @@ h6 {
   font-family: $font-headline;
   font-size: 64px;
 
+  > p {
+    margin: 0;
+    line-height: 1;
+  }
+
   &--page {  
     font-size: 42px;
   }
@@ -109,13 +114,15 @@ CONTAINER
 /* ==============================================
 CONTAINER
 ============================================== */
-.flash {
-  padding: 10px 0;
-  
+.site-header + .flash {
   &:last-child,
   &:only-child {
     margin-bottom: 25px;
   }
+}
+
+.flash {
+  padding: 10px 0;
 
   > .container {
     padding: 0;

@@ -222,14 +222,15 @@ RESPONSIVE - MOBILE & TABLET
 
     &__logo {
       position: relative;
+      left: 25px;
       z-index: 1500;
       left: 32px;
       width: 140px;
       transition: all .3s $ease-out-quad;
 
       &.show {
-        position: relative;
-        left: 1px;
+        position: fixed;
+        left: 20px;
       }
     }
   }

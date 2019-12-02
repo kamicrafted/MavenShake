@@ -91,3 +91,32 @@ textarea {
 .label--floating {
   margin-top: 5px;
 }
+
+label input[type="checkbox"] {
+  margin-right: 2px;
+}
+
+.checkbox {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+.field {
+  span {
+    font-weight: normal;
+  }
+}
+
+
+.field-group {
+  display: flex;
+  justify-content: space-between;
+
+  &.col2 .field {
+    width: calc(50% - 10px);
+  }
+
+  &.col2 > &.col2 {
+    margin-left: 20px;
+  }
+}

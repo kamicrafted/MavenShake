@@ -1,5 +1,5 @@
 {% extends "_layouts/base" %}
-{% block body_class %}home{% endblock %}
+{% block body_class %}view-faqs{% endblock %}
 
 {% block sitemeta %}
 <title>{{ "MavenShake - No-nonsense Nutrition"|t }}</title>
@@ -7,5 +7,33 @@
 {% endblock %}
 
 {% block main %}
+  <div class="message-main">
+    <h1 class="heading heading--page">{{ entry.headline }}</h1>
+    
+    {% if entry.subhead %}
+      <p class="subhead">
+        {{ entry.subhead }}
+      </p>
+    {% endif %}
+  </div>
 
+  <div class="faqs">
+    {% for block in entry.faqTable.all() %}
+      {% if block.type == "faqs" %}
+        <div class="faq">
+          <h3 class="faqs__question heading heading--section">
+            <i class="icon icon-question" data-feather="help-circle"></i>
+            {{ block.question }}
+          </h3>   
+
+          <div class="divider"></div>
+
+          <div class="faqs__answer">
+            {{ block.answer }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

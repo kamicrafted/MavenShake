@@ -32,3 +32,9 @@
     </div>
   </div>
 </footer>
+
+{% js %}
+$(".backtotop").click(function () {
+   $("html, body").animate({scrollTop: 0}, 500);
+});
+{% endjs %}

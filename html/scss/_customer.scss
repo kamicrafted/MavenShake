@@ -1,0 +1,150 @@
+/* ==============================================
+CUSTOMER/ORDER
+============================================== */
+.view-order {
+  font-size: 17px;
+
+  .order {
+    &__details {
+      margin-right: 75px;
+
+      .icon-file-text {
+        position: relative;
+        top: 4px;
+        width: 20px;
+        opacity: .5;
+      }
+    }
+
+    &__overview {
+      width: 300px;
+
+      .address-data {
+        &__attn,
+        &__title,
+        &__phone
+        &__phone2,
+        &__business,
+        &__taxid {
+          display: none;
+        }
+
+        &__address1,
+        &__zip,
+        &__country,
+        &__state {
+          display: inline; 
+        }
+      }
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__actions {
+      display: flex;
+      align-items: center;
+
+      .button {
+        margin: 0 0 0 10px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &__table {
+      tbody {
+        tr {
+          &:last-child {
+            td {
+              border-bottom: none;
+            }
+          }
+        }
+
+        .item__variant {
+          font-size: 16px;
+        }
+      }
+
+      .adjustment-type {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .discount {
+        color: $color-success;
+      }
+    }
+
+    &__preview {
+      margin-top: 35px;
+
+      &-list {
+        > li {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+
+/* ==============================================
+RESPONSIVE - MOBILE
+============================================== */
+@media (max-width: $mq-md) {
+  .view-order {
+    .order {
+      &__header {
+        flex-direction: column;
+      }
+
+      &__actions {
+        width: 100%;
+
+        .button {
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}
+
+// .order {
+
+//   &__header {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+
+//     .button {
+//       margin-bottom: 0;
+//     }
+//   }
+
+//   &__info {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+
+//   &__column {
+//     width: calc(100% / 3 - 10px);
+//     font-size: 16px;
+//     padding: 12px 16px;
+
+//     h4 {
+//       border-bottom: 2px solid $color-text;
+//       padding-bottom: 8px;
+//       font-size: 18px;
+//       font-family: $font-body;
+//       font-weight: bold;
+//     }
+//   }
+// }
