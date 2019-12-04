@@ -162,6 +162,48 @@ BADGES SECTION
 
 
 /* ==============================================
+TESTIMONIALS
+============================================== */
+.testimonials {
+  padding: 100px;
+  background-color: white;
+
+  &__item {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section__title {
+    text-align: center;
+  }
+
+  .photo {
+    width: 70px;
+    border-radius: 100%;
+    border: 2px solid #dadada;
+    display: block;
+    margin: 0 auto;
+    margin-top: -35px;
+  }
+
+  .quote {
+    blockquote {
+      text-align: center;
+      border: 2px solid #dadada;
+      padding: 20px 20px 50px 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px -5px rgba(0,0,0,.2);
+    }
+
+    cite {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+
+/* ==============================================
 MATRIX SECTION
 ============================================== */
 .section {
