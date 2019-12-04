@@ -63,7 +63,7 @@
         <div class="field">
           <label for="{{ modelName }}-countryId">Country *</label>
           <select class="address-country w-full" name="{{ modelName }}[countryId]">
-            <option value="">-----------------</option>
+            <option value="">Select a Country</option>
             {% set allowedCountryIds = [233] %}
             {% for key, option in countries %}
               {% set optionValue = (model ? model.countryId : '') %}

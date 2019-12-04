@@ -1,0 +1,111 @@
+{% js %}
+  window.csrfTokenName = '{{ craft.app.config.general.csrfTokenName }}';
+  window.csrfTokenValue = '{{ craft.app.request.getCsrfToken() }}';
+
+  $( document ).ready(function() {
+    $('.success').hide();
+    $('.update-cart').hide();
+
+    $('.success').click(function() {
+      e.preventDefault();
+      $(this).slideUp();
+    });
+
+    // AJAX cart (Product Page)
+    $("#add-to-cart").on('submit', function(e) {
+      e.preventDefault();
+      let form_data = $(this).serializeArray();
+      let current_count = parseInt($('#badge').text(), 10);
+      
+;     // Add the action URL to the submitted data
+      form_data['action'] = 'commerce/cart/update-cart'
+      console.log(form_data);
+
+      $.ajax({
+          type: 'post',
+          url: '',
+          data: form_data,
+          dataType: 'json',
+          success: function(response) {
+              if (response.success) {
+                  console.log('success');
+                  console.log(response.success);
+                  $(this).hide();
+                  // $('.success').slideDown();
+                  $('.success').slideDown().delay(3000).slideUp();
+                  $(this).parents('.hover-cart').fadeOut();
+
+                  $('#badge').text(current_count + parseInt(form_data[5].value, 10));
+                  // {{ craft.orders.number(cart.number).one().totalQty ?? 0}}
+              } else {
+                  console.log('error');
+                  console.log(response.success);
+                  alert("The item couldn't be added to your cart. Please try again] and if the issue persists, please contact us.");
+              }
+          }
+      });        
+    });
+
+    //AJAX Cart update actions
+    $(".cart__quantity, .cart__note").on('change keyup paste', function (e) {
+      let form_data = $("#cart-form").serializeArray();
+      console.log(form_data);
+
+      form_data['action'] = 'commerce/cart/update-cart'
+      
+      let current_count = $('.cart__quantity').val();
+      console.log('!!! ' + current_count);
+
+      $.ajax({
+          type: 'post',
+          url: '',
+          data: form_data,
+          dataType: 'json',
+          success: function(response) {
+              if (response.success) {
+                  console.log('success');
+                  console.log(response.success);
+                  $(this).hide();
+
+                  if (e.target.className == "cart__quantity") {
+                    $('.update-cart').fadeIn();
+                  }
+                  
+                  $('#badge').text(current_count);
+                  // {{ craft.orders.number(cart.number).one().totalQty ?? 0}}
+              } else {
+                  console.log('error');
+                  console.log(response.success);
+                  alert("The item couldn't be added to your cart. Please try again] and if the issue persists, please contact us.");
+              }
+          }
+      });
+    });
+  });
+
+  $('.remove-from-cart').click(function() {
+
+    var $this = $(this);
+    var id = $(this).data('line-item-id');
+    var data = {
+        action: 'commerce/cart/update-cart',
+        lineItems: {[id]: {'remove': true}}
+    };
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        headers: {
+            "X-CSRF-Token" : '{{ craft.app.request.csrfToken }}',
+        },
+        url: '/',
+        data: data,
+        success: function(response){
+            window.location = '/';
+            console.log("success", response, data);
+        },
+        fail :function(response) {
+            console.log("error", response, data);
+        }
+    });
+});
+{% endjs %}

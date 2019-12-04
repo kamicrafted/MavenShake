@@ -1,0 +1,28 @@
+{% js %}
+  $( document ).ready(function() {
+    $(".product__photo").click(function(event){
+      event.preventDefault();
+      $("#primaryImg").attr({ "src": $(this).data('lrgimg') });
+
+      $(".product__photo").each(function () {
+        $(this).removeClass("active");
+      })
+
+      $(this).addClass("active");
+    });
+
+    $(".product__variant").click(function(event) {
+      console.log($(this));
+
+      $(".product__variant").each(function () {
+        $(this).removeClass("active");
+      })
+      $(this).addClass("active");
+
+      console.log($(this).attr('data-value'));
+
+      // set variant
+      $("#variant-selection").val($(this).attr('data-value'));
+    })
+  });
+{% endjs %}

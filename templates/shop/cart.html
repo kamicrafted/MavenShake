@@ -13,7 +13,7 @@
 
   {% if cart.lineItems|length %}
     <table class="cart">
-      <form method="POST">
+      <form method="POST" id="cart-form" class="cart-form">
         <input type="hidden" name="action" value="commerce/cart/update-cart">
         <input type="hidden" name="cartUpdatedNotice" value="The cart was updated.">
         {{ redirectInput('shop/cart') }}
@@ -125,13 +125,15 @@
                             {% endfor %}
 
                             <div class="cart__actions">
-                              <label class="remove-from-cart">
+                              {# <label class="remove-from-cart">
                                 <input type="checkbox"
                                       name="lineItems[{{ item.id }}][remove]"
                                       value="1"> Remove from cart
-                              </label>
+                              </label> #}
 
-                              <input class="right button button--secondary" type="submit" value="Update Cart"/>
+                              <button class="remove-from-cart" data-line-item-id="{{ item.id }}">
+                                <i class="icon-remove" data-feather="trash-2"></i>
+                              </button>
                             </div>
                           </td>
                         </tr>
@@ -161,6 +163,18 @@
                           {% endfor %}
                         {% endif %}
                       {% endfor %} {# END MAIN LOOP #}
+
+                      {# <tr>
+                        <td colspan="3">
+                          {% for handle, method in cart.availableShippingMethods %}
+                              <label>
+                                  <input type="radio" name="shippingMethodHandle" value="{{ handle }}"
+                                        {% if handle == cart.shippingMethodHandle %}checked{% endif %} />
+                                  <strong>{{ method.name }}</strong> {{ method.priceForOrder(cart)|currency(cart.currency) }}
+                              </label>
+                          {% endfor %}
+                        </td>
+                      </tr> #}
 
                       {% if not lineItemHasErrors %}
                         {% for adjustment in cart.orderAdjustments %}
@@ -283,6 +297,13 @@
                             </div>
                           </div>
 
+                          <div class="update-cart">
+                            <p>
+                              To see updated pricing, please update your cart.
+                            </p>
+                            <input class="button button--secondary" type="submit" value="Update Cart"/>
+                          </div>
+
                           <a class="button button--primary" href="{{ url('shop/checkout') }}">Checkout</a>
                         {% endif %}
                       </td>
@@ -301,9 +322,7 @@
     <p>Your cart is empty. <a href="{{ url('shop/products/mavenshake') }}">Shop MavenShake</a>.</p>
   {% endif %}
 
-
-
-
+  {% include 'shop/_scripts/ajax-cart' %}
 	{# {% js %}
 	  var states = {{ craft.commerce.states.allStatesAsList|json_encode|raw }};
 	{% endjs %}

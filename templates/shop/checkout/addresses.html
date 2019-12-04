@@ -44,6 +44,8 @@
           <span class="label-body">Use same address for shipping</span>
         </label> #}
 
+        <hr class="address-divider">
+
         {% include 'shop/_includes/addresses/fieldset' with {
             title: "Billing Address"|t,
             class: 'BillingAddress hidden',
@@ -68,6 +70,7 @@
 
   {% js %}
   var $fieldsets = $('.address-fieldset');
+  $('.address-divider').toggleClass('hidden');
 
   $fieldsets.each(function () {
     var $addressFieldset = $(this);
@@ -84,12 +87,13 @@
 
       if (this.$radio.is(':checked')) {
         this.$body.removeClass('hidden');
-      }
+      } 
     });
   });
 
   $("#billingAddressSameAsShipping").change(function (e) {
     $('.address-fieldset.BillingAddress').toggleClass('hidden');
+    $('.address-divider').toggleClass('hidden');
   });
 
   {% if (cart.billingAddressId and cart.billingAddress.hasErrors()) or (cart.billingAddressId != cart.shippingAddressId) %}

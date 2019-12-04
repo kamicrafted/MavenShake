@@ -50,6 +50,17 @@
                       {% endif %}
                     </p>
                   </div>
+                {% elseif method.name == 'Free Shipping' %}
+                  <div class="shipping-option">
+                    <strong>{{ method.name }}</strong>
+                    <p class="shipping-description">
+                      {% if method.shippingRules|length %}
+                        {% for shippingRule in method.shippingRules %}
+                          {{ shippingRule.description }}
+                        {% endfor %}
+                      {% endif %}
+                    </p>
+                  </div>
                 {% else %}
                   <strong class="shipping-name">{{ method.name }}</strong>
                 {% endif %}

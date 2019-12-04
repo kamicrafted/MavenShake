@@ -24,6 +24,8 @@
       <div class="order__header">
         <h1 class="heading heading--section">Order {{ order.reference }}</h1>
 
+        {# <p>{{ dump(order.getAdjustments()) }}</p> #}
+
         <div class="order__actions">
           {% if currentUser %}
             <a class="button button--secondary" href="{{ url('shop/customer') }}">View all orders</a>

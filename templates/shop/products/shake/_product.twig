@@ -58,7 +58,7 @@
 
     <div class="product__main-info">
       {% if product.variants|length %}
-        <form method="POST" class="add-to-cart">
+        <form method="POST" id="add-to-cart" class="add-to-cart">
           <input type="hidden" name="action" value="commerce/cart/update-cart">
           <input type="hidden" name="purchasableId" value="{{ product.id }}">
           {{ redirectInput('shop/cart') }}
@@ -114,41 +114,43 @@
       {{ product.description }}
     </div>
 
-    {% set pricingTable = craft.app.fields.getFieldByHandle('pricingTable') %}
-    {% if product.pricingTable|length %}
-      <div class="product__pricing">
-        <h3 class="heading heading--section">Buy more and save</h3>
-        <p class="product__pricing-message">
-          Save up to an additional 10% off your entire order when you buy more than a month's supply!
-        </p>
-        <div class="pricing">
-          <table class="pricing-table">
-            <thead>
-              <tr>
-                {% for column in pricingTable.settings.columns %}
-                  <td>{{ column.heading }}</td>
-                {% endfor %}
-              </tr>
-            </thead>
-
-            <tbody>
-              {% for row in product.pricingTable %}
+    {% if currentUser and not currentUser.isInGroup('vip') %}
+      {% set pricingTable = craft.app.fields.getFieldByHandle('pricingTable') %}
+      {% if product.pricingTable|length %}
+        <div class="product__pricing">
+          <h3 class="heading heading--section">Buy more and save</h3>
+          <p class="product__pricing-message">
+            Save up to an additional 10% off your entire order when you buy more than a month's supply!
+          </p>
+          <div class="pricing">
+            <table class="pricing-table">
+              <thead>
                 <tr>
-                  <td>
-                    {{ row.count }}
-                  </td>
-                  <td>
-                    {{ row.discount }}
-                  </td>
-                  <td>
-                    {{ row.description }}
-                  </td>
+                  {% for column in pricingTable.settings.columns %}
+                    <td>{{ column.heading }}</td>
+                  {% endfor %}
                 </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody>
+                {% for row in product.pricingTable %}
+                  <tr>
+                    <td>
+                      {{ row.count }}
+                    </td>
+                    <td>
+                      {{ row.discount }}
+                    </td>
+                    <td>
+                      {{ row.description }}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      {% endif %}
     {% endif %}
   </div>
 

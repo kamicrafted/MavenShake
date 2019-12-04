@@ -24,28 +24,28 @@
 				{% if currentUser %}<a class="edit" href="{{ url('shop/checkout/addresses') }}">Change</a>{% endif %}
 			</div>
 
-			<hr>
 		{% endif %}
 
-		{% if showShippingMethod %}
-				<strong>Shipping Method</strong>
-
-				<p>
-					{% if cart.shippingMethod %}
-						{{ cart.shippingMethod.name }}
-					{% else %}
-						None selected <a href="{{ url('shop/checkout/shipping') }}">Select one</a>
-					{% endif %}
+		{# {% if showShippingMethod %}
+			{% if cart.shippingMethod %}
+				<p class="method-details">
+					<strong>{{ cart.shippingMethod.name }}</strong>
+					<span>{{ cart.totalShippingCost | commerceCurrency(cart.currency) }}</span>
 				</p>
+			{% else %}
+				<p class="method-details">
+					<span>None selected</span> <a href="{{ url('shop/checkout/shipping') }}">Select one</a>
+				</p>
+			{% endif %}
 
-				<hr>
-		{% endif %}
+			<hr>
+		{% endif %} #}
 
 		<h3 class="heading heading--section">Cart Details</h3>
 		<ul class="payment__cart-list list-reset leading-normal">
 				{% for item in cart.lineItems %}
-						<li>
-							<span>{{ item.description }}</span>
+						<li class="payment__item">
+							<span><strong>{{ item.description }}</strong> x {{ item.qty }}</span>
 							<span>{{ item.subtotal|commerceCurrency(cart.currency) }}</span>
 						</li>
 				{% endfor %}
@@ -54,11 +54,11 @@
 				{% for adjustment in cart.adjustments %}
 						<li class="payment__adjustment">
 							<p>
-								<strong>{{ adjustment.name }}</strong>
+								<strong>{{ adjustment.name }} {{ adjustment.type }}</strong>
 								<br>
 								<span class="payment__adjustment-description">{{ adjustment.description }}</span>
 							</p>
-							<span>{{ adjustment.amount|commerceCurrency(cart.currency) }}</span>
+							<span class="{% if adjustment.type == 'discount'%} discount{% endif %}">{{ adjustment.amount|commerceCurrency(cart.currency) }}</span>
 						</li>
 				{% endfor %}
 
@@ -86,7 +86,7 @@
 						<li>
 								<strong>Payment {{ cart.paymentCurrency }}:</strong>
 								<strong>
-									{{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true) }}
+									{{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true) }}									
 								</strong>
 						</li>
 				{% endif %}

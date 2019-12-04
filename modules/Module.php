@@ -3,6 +3,10 @@ namespace modules;
 
 use Craft;
 
+use craft\commerce\events\RegisterAddressRulesEvent;
+use craft\commerce\models\Address;
+use yii\base\Event;
+
 /**
  * Custom module class.
  *
@@ -36,6 +40,23 @@ class Module extends \yii\base\Module
         } else {
             $this->controllerNamespace = 'modules\\controllers';
         }
+
+        // Event::on(
+        //     Address::class,
+        //     Address::EVENT_REGISTER_ADDRESS_VALIDATION_RULES,
+        //     function (RegisterAddressRulesEvent $event) {
+        //         $event->rules[] = [[
+        //             'firstName',
+        //             'lastName',
+        //             'address1',
+        //             'stateText',
+        //             'city',
+        //             'country',
+        //             'address1',
+        //             'zipCode',
+        //         ], 'required'];
+        //     }
+        // );
 
         parent::init();
 
