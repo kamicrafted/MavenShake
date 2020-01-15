@@ -1,0 +1,40 @@
+<div class="mailinglist">
+  <form class="newsletter-form" action="" method="post">
+    {{ csrfInput() }}
+    <input type="hidden" name="action" value="mailchimp-subscribe/audience/subscribe">
+    
+    {% set subscribeResponse = mailchimpSubscribe is defined and mailchimpSubscribe.action == 'subscribe' ? mailchimpSubscribe : null %}
+    
+    {% if subscribeResponse %}
+        {% if subscribeResponse.success %}
+            <p>Subscribed successfully!</p>
+        {% else %}
+            <p>An error occured: {{ subscribeResponse.message }}</p>
+        {% endif %}
+    {% endif %}
+
+    <div class="field-group col3">
+      <div class="field">
+        <label for="emailInput"{% if subscribeResponse and subscribeResponse.errorCode=='1000' %} class="error"{% endif %}>
+            Email:
+        </label>
+        <input id="emailInput" type="text" name="email" 
+            {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
+      </div>
+      
+      <div class="field">
+          <label for="firstNameInput">First name:</label>
+          <input id="firstNameInput" type="text" name="merge_fields[FNAME]" 
+              {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.FNAME ?? '' }}"{% endif %}/>
+      </div>
+
+      <div class="field">
+          <label for="lastNameInput">Last name:</label>
+          <input id="lastNameInput" type="text" name="merge_fields[LNAME]" 
+              {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.LNAME ?? '' }}"{% endif %}/>
+      </div>
+    </div>
+
+    <input type="submit" name="" value="Subscribe"/>
+  </form>
+</div>

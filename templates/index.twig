@@ -75,10 +75,13 @@
   {% endif %}
 {% endfor %}
 
+{% set randomTestimonial = random(1,2) %}
+
 <div class="testimonials">
   <div class="testimonials__item">
-    <h2 class="section__title mt-0">Our Customers Love Us 	&#128150;</h2>
+    <h2 class="section__title mt-0">Our Customers Love Us &#128150;</h2>
     
+    {% if randomTestimonial == 1 %}
     <div class="quote">
       <blockquote>
         Just came in from an 8-miler... Had a great Maven workout yesterday and a great run today. I believe that MavenShake has been so beneficial to me. I can do kickass workouts and I’m running better. You know I normally struggle to eat, so I owe it all to my daily shake. Just wanted to say THANKS!!
@@ -86,10 +89,23 @@
 
       <img class="photo" src="images/testimonial-mary-k.jpg" alt="">
 
-      <cite><strong>Mary K.</strong> – Name of profession</cite>
+      <cite><strong>Mary K.</strong> - Retired Teacher / Cancer Survivor</cite>
     </div>
+    {% else %}
+    <div class="quote">
+      <blockquote>
+        I recently fasted for 40 days due to spiritual reasons without eating any solid foods. My diet consisted purely of MavenShake and water during this time. I didn't just get through those 40 days, but excelled through it thanks to MavenShake supporting my body the entire time.
+      </blockquote>
+
+      <img class="photo" src="images/testimonial-peter-a.jpg" alt="">
+
+      <cite><strong>Peter A.</strong> - Lead Pastor</cite>
+    </div>
+    {% endif %}
   </div>
 </div>
+
+{# {% include '/_includes/mailinglist' %} #}
 {% endblock %}
 
 {% block vue %}

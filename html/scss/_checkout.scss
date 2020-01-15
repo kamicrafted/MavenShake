@@ -364,6 +364,11 @@ CHECKOUT/PAYMENT
       font-weight: 600 !important;
     }
   }
+
+  .card-errors {
+    color: $color-error;
+    font-size: 15px;
+  }
 }
 
 .payment__cart-list {

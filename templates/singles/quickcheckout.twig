@@ -1,0 +1,179 @@
+{% extends "_layouts/base" %}
+{% block body_class %}view-quickcheck{% endblock %}
+
+{% block sitemeta %}
+<title>{{ "Quick Checkout - MavenShake"|t }}</title>
+<meta name="description" content="{{ "This page is for local purchases"|t }}">
+{% endblock %}
+
+{% block body %}
+<div id="main" class="quickcheck__wrapper">
+  {% if currentUser.isInGroup('staff') is defined %}
+  <h1>QUICK CHECKOUT</h1>
+  <p class="note"><strong><u>This page is for staff members only.</u></strong><br>
+  Quickly authorize a Stripe transaction for pickup orders.</p>
+  
+  <p class="iplog">
+    Current IP logged at: {{ craft.app.request.userIP }}
+  </p>
+  
+  <div class="quickcheckout">
+    <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3"></script>
+
+    <div class="quickcheck quickcheck--retail">
+      <img src="https://dev.mavenshake.com/images/products/quickcheck-retail.jpg" alt="">
+      <h2>Retail Pricing</h2>
+      <p><strong>$40 / Pouch</strong></p>
+
+      <div class="quickcheck__content">
+        <label for="quantity-retail">Quantity:</label>
+        <input type="number" name="quantity-retail" class="quantity-retail" id="quantity-retail" value="1">
+        <button
+          class="button button--primary"
+          id="checkout-button-sku_GCdHCKYw4UtMXT"
+          role="link"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <div class="quickcheck quickcheck--member">
+      <img src="https://dev.mavenshake.com/images/products/quickcheck-member.jpg" alt="">
+      <h2>Member Pricing</h2>
+      <p><strong><strike>$40</strike> $32 / Pouch</strong> (20% off)</p>
+
+      <div class="quickcheck__content">
+        <label for="quantity-member">Quantity:</label>
+        <input type="number" name="quantity-member" class="quantity-member" id="quantity-member" value="1">
+        <button
+          class="button button--primary"
+          id="checkout-button-sku_GCdGhTP6TzSvzh"
+          role="link"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <div class="quickcheck quickcheck--vip">
+      <img src="https://dev.mavenshake.com/images/products/quickcheck-vip.jpg" alt="">
+      <h2>VIP Pricing</h2>
+      <p><strong><strike>$40</strike> $22 / Pouch</strong> (45% off)</p>
+
+      <div class="quickcheck__content">
+        <label for="quantity-vip">Quantity:</label>
+        <input type="number" name="quantity-vip" class="quantity-vip" id="quantity-vip" value="1">
+        <button
+          class="button button--primary"
+          id="checkout-button-sku_GCmg6aWoHLFzch"
+          role="link"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+<div id="error-message"></div>
+
+<script>
+  (function() {
+    var stripe = Stripe('pk_live_sm4NkEHCkwnshQk64lsBVDm200RhifZsW1');
+    
+    var quantityRetail = 1;
+    var quantityMember = 1;
+    var quantityVIP = 1;
+
+    $(".quantity-retail").bind('keyup mouseup', function () {
+      quantityRetail = this.value;        
+    });
+
+    $(".quantity-member").bind('keyup mouseup', function () {
+      quantityMember = this.value;                
+    });
+
+    $(".quantity-vip").bind('keyup mouseup', function () {
+      quantityVIP = this.value;        
+    });
+
+    var checkoutButtonRetail = document.getElementById('checkout-button-sku_GCdHCKYw4UtMXT');
+    checkoutButtonRetail.addEventListener('click', function () {
+      // When the customer clicks on the button, redirect
+      // them to Checkout.
+      stripe.redirectToCheckout({
+        items: [{sku: 'sku_GCdHCKYw4UtMXT', quantity: Number(quantityRetail)}],
+
+        // Do not rely on the redirect to the successUrl for fulfilling
+        // purchases, customers may not always reach the success_url after
+        // a successful payment.
+        // Instead use one of the strategies described in
+        // https://stripe.com/docs/payments/checkout/fulfillment
+        successUrl: window.location.protocol + '//dev.mavenshake.com/quickcheckout/success',
+        cancelUrl: window.location.protocol + '//dev.mavenshake.com/quickcheckout/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, display the localized error message to your customer.
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+
+    var checkoutButtonMember = document.getElementById('checkout-button-sku_GCdGhTP6TzSvzh');
+    checkoutButtonMember.addEventListener('click', function () {
+      console.log(quantityMember)
+      // When the customer clicks on the button, redirect
+      // them to Checkout.
+      stripe.redirectToCheckout({
+        items: [{sku: 'sku_GCdGhTP6TzSvzh', quantity: Number(quantityMember)}],
+
+        // Do not rely on the redirect to the successUrl for fulfilling
+        // purchases, customers may not always reach the success_url after
+        // a successful payment.
+        // Instead use one of the strategies described in
+        // https://stripe.com/docs/payments/checkout/fulfillment
+        successUrl: window.location.protocol + '//dev.mavenshake.com/success',
+        cancelUrl: window.location.protocol + '//dev.mavenshake.com/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, display the localized error message to your customer.
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+
+    var checkoutButtonVIP = document.getElementById('checkout-button-sku_GCmg6aWoHLFzch');
+    checkoutButtonVIP.addEventListener('click', function () {
+      // When the customer clicks on the button, redirect
+      // them to Checkout.
+      stripe.redirectToCheckout({
+        items: [{sku: 'sku_GCmg6aWoHLFzch', quantity: Number(quantityVIP)}],
+
+        // Do not rely on the redirect to the successUrl for fulfilling
+        // purchases, customers may not always reach the success_url after
+        // a successful payment.
+        // Instead use one of the strategies described in
+        // https://stripe.com/docs/payments/checkout/fulfillment
+        successUrl: window.location.protocol + '//dev.mavenshake.com/success',
+        cancelUrl: window.location.protocol + '//dev.mavenshake.com/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, display the localized error message to your customer.
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  })();
+</script>
+{% endblock %}

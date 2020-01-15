@@ -1,0 +1,24 @@
+{% extends "_layouts/base" %}
+{% block body_class %}view-quickcheck{% endblock %}
+
+{% block sitemeta %}
+<title>{{ "Successful Quick Checkout - MavenShake"|t }}</title>
+<meta name="description" content="{{ "Your Quick Checkout was successful!"|t }}">
+{% endblock %}
+
+{% block body %}
+<div id="main" class="quickcheck__wrapper">
+  {# {% if currentUser.isInGroup('superUser') is defined %} #}
+  <h1>DIRECT CHECKOUT</h1>
+  
+  <p class="quickcheck-success">
+    Your order was successfully placed! &#129395;
+  </p>
+
+  <br>
+
+  <a href="/quickcheckout" class="button button--primary">Back to Direct Checkout</a>
+  {# {% endif %} #}
+</div>
+<div id="error-message"></div>
+{% endblock %}

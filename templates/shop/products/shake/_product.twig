@@ -114,7 +114,7 @@
       {{ product.description }}
     </div>
 
-    {% if currentUser and not currentUser.isInGroup('vip') %}
+    {# {% if currentUser and not currentUser.isInGroup('vip') %} #}
       {% set pricingTable = craft.app.fields.getFieldByHandle('pricingTable') %}
       {% if product.pricingTable|length %}
         <div class="product__pricing">
@@ -151,7 +151,7 @@
           </div>
         </div>
       {% endif %}
-    {% endif %}
+    {# {% endif %} #}
   </div>
 
   {% include 'shop/_scripts/ajax-cart' %}

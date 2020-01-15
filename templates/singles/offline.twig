@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block sitemeta %}
+      <title>{{ "Please check back later – MavenShake"|t }}</title>
+      <meta name="description" content="{{ "Welcome to Mavenshake"|t }}">
+    {% endblock %}
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <style>
+      html, body, .message {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #0FD284;
+      }
+
+      .message {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        padding: 0 100px;
+        background-image: url(https://mavenshake.com/images/offline-pattern.png);
+        background-position: center center;
+      }
+
+      .message img {
+        width: 100%;
+        max-width: 600px;
+        user-select: none;
+      }
+    </style>
+  </head>
+
+  <body class="view-offline">
+    <div class="message">
+      <img src="https://mavenshake.com/images/site-offline.svg" alt="">
+    </div>
+  </body>
+</html>

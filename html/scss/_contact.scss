@@ -63,6 +63,16 @@
   }
 }
 
+.mailinglist {
+  max-width: $site-max-width;
+  margin: 0 auto;
+
+  .field {
+    width: calc(100%/3 - 10px);
+    margin-bottom: 0;
+  }
+}
+
 /* ==============================================
 RESPONSIVE - MOBILE & TABLET
 ============================================== */
