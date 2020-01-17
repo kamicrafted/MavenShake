@@ -7,6 +7,17 @@
     {% block sitemeta %}
       <title>{{ "Please check back later – MavenShake"|t }}</title>
       <meta name="description" content="{{ "Welcome to Mavenshake"|t }}">
+      <meta name="robots" content="none">
+    {% endblock %}
+
+    {% block seo %}
+      <meta property="og:title" content="MavenShake – No-nonsense Nutrition" />
+      <meta property="og:image" content="https://dev.mavenshake.com/images/mavenshake-fb.jpg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:url" content="https://mavenshake.com" />
+      <meta property="og:type" content="website" />
+      <meta property="og:description" content="An all-natural, all-in-one superfood shake with zero filler." />
     {% endblock %}
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
